@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "9awnA7GzRWjTgmd0ZEzabTMBKyPvfOZZP9Dk7gq1kvg5squLAH6sOUZQAL+wg2o6GuE8+cgZZu9I5S0YLy1dcw==",
+  "dgSpecHash": "CJbTq8THctx6xUlrnElqWNQzKeuIULOWqc6nKkN5py8GxToocCYoJ47+C2/mt6+CqtTs2cSOclJoJGXCDhcRFw==",
   "success": true,
   "projectFilePath": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Client\\Faith.Client.csproj",
   "expectedPackageFiles": [
@@ -28,6 +28,7 @@
     "C:\\Users\\samyratchet\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
     "C:\\Users\\samyratchet\\.nuget\\packages\\microsoft.jsinterop\\6.0.7\\microsoft.jsinterop.6.0.7.nupkg.sha512",
     "C:\\Users\\samyratchet\\.nuget\\packages\\microsoft.jsinterop.webassembly\\6.0.7\\microsoft.jsinterop.webassembly.6.0.7.nupkg.sha512",
+    "C:\\Users\\samyratchet\\.nuget\\packages\\mudblazor\\6.0.12\\mudblazor.6.0.12.nupkg.sha512",
     "C:\\Users\\samyratchet\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
     "C:\\Users\\samyratchet\\.nuget\\packages\\system.io.pipelines\\6.0.3\\system.io.pipelines.6.0.3.nupkg.sha512",
     "C:\\Users\\samyratchet\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
