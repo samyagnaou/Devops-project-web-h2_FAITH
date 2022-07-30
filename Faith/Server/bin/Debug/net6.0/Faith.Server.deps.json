@@ -16,6 +16,26 @@
           "Faith.Server.dll": {}
         }
       },
+      "BlazorComponentUtilities/1.7.1": {
+        "runtime": {
+          "lib/netstandard2.0/BlazorComponentUtilities.dll": {
+            "assemblyVersion": "1.7.1.0",
+            "fileVersion": "1.7.1.0"
+          }
+        }
+      },
+      "BlazorStrap/5.0.106": {
+        "dependencies": {
+          "BlazorComponentUtilities": "1.7.1",
+          "Microsoft.AspNetCore.Components.Web": "6.0.7"
+        },
+        "runtime": {
+          "lib/net6.0/BlazorStrap.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "Microsoft.AspNetCore.Authorization/6.0.7": {
         "dependencies": {
           "Microsoft.AspNetCore.Metadata": "6.0.7",
@@ -200,18 +220,6 @@
           }
         }
       },
-      "MudBlazor/6.0.12": {
-        "dependencies": {
-          "Microsoft.AspNetCore.Components": "6.0.7",
-          "Microsoft.AspNetCore.Components.Web": "6.0.7"
-        },
-        "runtime": {
-          "lib/net6.0/MudBlazor.dll": {
-            "assemblyVersion": "6.0.12.0",
-            "fileVersion": "6.0.12.0"
-          }
-        }
-      },
       "System.Diagnostics.DiagnosticSource/6.0.0": {
         "dependencies": {
           "System.Runtime.CompilerServices.Unsafe": "6.0.0"
@@ -239,9 +247,9 @@
       },
       "Faith.Client/1.0.0": {
         "dependencies": {
+          "BlazorStrap": "5.0.106",
           "Faith.Shared": "1.0.0",
-          "Microsoft.AspNetCore.Components.WebAssembly": "6.0.7",
-          "MudBlazor": "6.0.12"
+          "Microsoft.AspNetCore.Components.WebAssembly": "6.0.7"
         },
         "runtime": {
           "Faith.Client.dll": {}
@@ -259,6 +267,20 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "BlazorComponentUtilities/1.7.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-m73xpJYtSd7tlOowMslyAvWDipW9bOTWJzGnCSQJK9tm4fz6xXQZbAbTDydmV9bxhTrzmJMMRGsAEnSVZjWVjg==",
+      "path": "blazorcomponentutilities/1.7.1",
+      "hashPath": "blazorcomponentutilities.1.7.1.nupkg.sha512"
+    },
+    "BlazorStrap/5.0.106": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lM//XdITeSSrCkKOVoaxZmSvEWKZmnkp/qj6/U+r3K+ypvKrhC/TI8PvtphtIoOXUNcHTmb+tVVWF+lhrCB7/A==",
+      "path": "blazorstrap/5.0.106",
+      "hashPath": "blazorstrap.5.0.106.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authorization/6.0.7": {
       "type": "package",
@@ -427,13 +449,6 @@
       "sha512": "sha512-SKms9FwZt2QNPWNlgrettE87JYVt9PDvJrI1BFeZgRwnG0sEAnMqdfYG8SoWB13guT55d+cstyBQCG66B7Sr+w==",
       "path": "microsoft.jsinterop.webassembly/6.0.7",
       "hashPath": "microsoft.jsinterop.webassembly.6.0.7.nupkg.sha512"
-    },
-    "MudBlazor/6.0.12": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-TeBo3LdV8J4e47vhhhIWyWReTC1A+7lE0u/VxdmGMn34B3fpiGBj0vOr7CGyQGuN7VuhvT/dev3ikI0EsCwN6g==",
-      "path": "mudblazor/6.0.12",
-      "hashPath": "mudblazor.6.0.12.nupkg.sha512"
     },
     "System.Diagnostics.DiagnosticSource/6.0.0": {
       "type": "package",

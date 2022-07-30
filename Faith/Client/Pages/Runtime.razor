@@ -1,0 +1,23 @@
+﻿@page "/runtime"
+
+<button @onclick="@onClick"> Check Runtime </button>
+
+
+@code {
+
+    [Inject]
+    protected IJSRuntime ijsRuntime { get; set; }
+
+    private void onClick()
+    {
+        var isWebAssembly = this.ijsRuntime is IJSInProcessRuntime;
+
+        if(isWebAssembly){
+           Console.WriteLine("The app is running on WebAssembly");
+        }
+        else{
+            Console.WriteLine("The app is running on sever-side");
+        }
+
+    }
+}

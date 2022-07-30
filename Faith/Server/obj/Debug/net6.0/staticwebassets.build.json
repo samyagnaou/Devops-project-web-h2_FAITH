@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Zpl9lloh4iQ51DGeXtTUjrxpInoy0p8+WOk+XusRvCg=",
+  "Hash": "hSJOgORhcqD/Py0u1kWP0VgSQlKt3245C8Z2jAjYRz0=",
   "Source": "Faith.Server",
   "BasePath": "_content/Faith.Server",
   "Mode": "Default",
@@ -29,29 +29,29 @@
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\samyratchet\\.nuget\\packages\\mudblazor\\6.0.12\\staticwebassets\\MudBlazor.min.css",
-      "SourceId": "MudBlazor",
+      "Identity": "C:\\Users\\samyratchet\\.nuget\\packages\\blazorstrap\\5.0.106\\staticwebassets\\BlazorStrap.bundle.scp.css",
+      "SourceId": "BlazorStrap",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\samyratchet\\.nuget\\packages\\mudblazor\\6.0.12\\staticwebassets\\",
-      "BasePath": "_content/MudBlazor",
-      "RelativePath": "MudBlazor.min.css",
+      "ContentRoot": "C:\\Users\\samyratchet\\.nuget\\packages\\blazorstrap\\5.0.106\\staticwebassets\\",
+      "BasePath": "_content/BlazorStrap",
+      "RelativePath": "BlazorStrap.bundle.scp.css",
       "AssetKind": "All",
-      "AssetMode": "All",
+      "AssetMode": "Reference",
       "AssetRole": "Primary",
       "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\samyratchet\\.nuget\\packages\\mudblazor\\6.0.12\\staticwebassets\\MudBlazor.min.css"
+      "OriginalItemSpec": "C:\\Users\\samyratchet\\.nuget\\packages\\blazorstrap\\5.0.106\\staticwebassets\\BlazorStrap.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\samyratchet\\.nuget\\packages\\mudblazor\\6.0.12\\staticwebassets\\MudBlazor.min.css.gz",
-      "SourceId": "MudBlazor",
+      "Identity": "C:\\Users\\samyratchet\\.nuget\\packages\\blazorstrap\\5.0.106\\staticwebassets\\blazorstrap.js",
+      "SourceId": "BlazorStrap",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\samyratchet\\.nuget\\packages\\mudblazor\\6.0.12\\staticwebassets\\",
-      "BasePath": "_content/MudBlazor",
-      "RelativePath": "MudBlazor.min.css.gz",
+      "ContentRoot": "C:\\Users\\samyratchet\\.nuget\\packages\\blazorstrap\\5.0.106\\staticwebassets\\",
+      "BasePath": "_content/BlazorStrap",
+      "RelativePath": "blazorstrap.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -60,15 +60,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\samyratchet\\.nuget\\packages\\mudblazor\\6.0.12\\staticwebassets\\MudBlazor.min.css.gz"
+      "OriginalItemSpec": "C:\\Users\\samyratchet\\.nuget\\packages\\blazorstrap\\5.0.106\\staticwebassets\\blazorstrap.js"
     },
     {
-      "Identity": "C:\\Users\\samyratchet\\.nuget\\packages\\mudblazor\\6.0.12\\staticwebassets\\MudBlazor.min.js",
-      "SourceId": "MudBlazor",
+      "Identity": "C:\\Users\\samyratchet\\.nuget\\packages\\blazorstrap\\5.0.106\\staticwebassets\\blazorstrap.min.js",
+      "SourceId": "BlazorStrap",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\samyratchet\\.nuget\\packages\\mudblazor\\6.0.12\\staticwebassets\\",
-      "BasePath": "_content/MudBlazor",
-      "RelativePath": "MudBlazor.min.js",
+      "ContentRoot": "C:\\Users\\samyratchet\\.nuget\\packages\\blazorstrap\\5.0.106\\staticwebassets\\",
+      "BasePath": "_content/BlazorStrap",
+      "RelativePath": "blazorstrap.min.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -77,15 +77,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\samyratchet\\.nuget\\packages\\mudblazor\\6.0.12\\staticwebassets\\MudBlazor.min.js"
+      "OriginalItemSpec": "C:\\Users\\samyratchet\\.nuget\\packages\\blazorstrap\\5.0.106\\staticwebassets\\blazorstrap.min.js"
     },
     {
-      "Identity": "C:\\Users\\samyratchet\\.nuget\\packages\\mudblazor\\6.0.12\\staticwebassets\\MudBlazor.min.js.gz",
-      "SourceId": "MudBlazor",
+      "Identity": "C:\\Users\\samyratchet\\.nuget\\packages\\blazorstrap\\5.0.106\\staticwebassets\\popper.min.js",
+      "SourceId": "BlazorStrap",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\samyratchet\\.nuget\\packages\\mudblazor\\6.0.12\\staticwebassets\\",
-      "BasePath": "_content/MudBlazor",
-      "RelativePath": "MudBlazor.min.js.gz",
+      "ContentRoot": "C:\\Users\\samyratchet\\.nuget\\packages\\blazorstrap\\5.0.106\\staticwebassets\\",
+      "BasePath": "_content/BlazorStrap",
+      "RelativePath": "popper.min.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -94,7 +94,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\samyratchet\\.nuget\\packages\\mudblazor\\6.0.12\\staticwebassets\\MudBlazor.min.js.gz"
+      "OriginalItemSpec": "C:\\Users\\samyratchet\\.nuget\\packages\\blazorstrap\\5.0.106\\staticwebassets\\popper.min.js"
     },
     {
       "Identity": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\blazor.boot.json",
@@ -129,6 +129,40 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\samyratchet\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly\\6.0.7\\build\\net6.0\\blazor.webassembly.js"
+    },
+    {
+      "Identity": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\BlazorComponentUtilities.dll",
+      "SourceId": "Faith.Client",
+      "SourceType": "Project",
+      "ContentRoot": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/BlazorComponentUtilities.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\samyratchet\\.nuget\\packages\\blazorcomponentutilities\\1.7.1\\lib\\netstandard2.0\\BlazorComponentUtilities.dll"
+    },
+    {
+      "Identity": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\BlazorStrap.dll",
+      "SourceId": "Faith.Client",
+      "SourceType": "Project",
+      "ContentRoot": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/BlazorStrap.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\samyratchet\\.nuget\\packages\\blazorstrap\\5.0.106\\lib\\net6.0\\BlazorStrap.dll"
     },
     {
       "Identity": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\dotnet.6.0.7.lwqc5nreb8.js",
@@ -792,23 +826,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\samyratchet\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.7\\runtimes\\browser-wasm\\lib\\net6.0\\mscorlib.dll"
-    },
-    {
-      "Identity": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\MudBlazor.dll",
-      "SourceId": "Faith.Client",
-      "SourceType": "Project",
-      "ContentRoot": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/MudBlazor.dll",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "BlazorWebAssemblyResource",
-      "AssetTraitValue": "runtime",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\samyratchet\\.nuget\\packages\\mudblazor\\6.0.12\\lib\\net6.0\\MudBlazor.dll"
     },
     {
       "Identity": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\netstandard.dll",
@@ -4772,23 +4789,6 @@
       "OriginalItemSpec": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Diagnostics.Process.dll"
     },
     {
-      "Identity": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Client\\obj\\Debug\\net6.0\\build-gz\\f0b+VQPY.gz",
-      "SourceId": "Faith.Client",
-      "SourceType": "Project",
-      "ContentRoot": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/MudBlazor.dll.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\MudBlazor.dll",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\MudBlazor.dll"
-    },
-    {
       "Identity": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Client\\obj\\Debug\\net6.0\\build-gz\\f6Y+l9Of.gz",
       "SourceId": "Faith.Client",
       "SourceType": "Project",
@@ -5212,6 +5212,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Security.Cryptography.Primitives.dll"
+    },
+    {
+      "Identity": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Client\\obj\\Debug\\net6.0\\build-gz\\iorrbmR5.gz",
+      "SourceId": "Faith.Client",
+      "SourceType": "Project",
+      "ContentRoot": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/BlazorStrap.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\BlazorStrap.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\BlazorStrap.dll"
     },
     {
       "Identity": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Client\\obj\\Debug\\net6.0\\build-gz\\itmy5KtO.gz",
@@ -6028,6 +6045,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Diagnostics.TraceSource.dll"
+    },
+    {
+      "Identity": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Client\\obj\\Debug\\net6.0\\build-gz\\PFhjYb3t.gz",
+      "SourceId": "Faith.Client",
+      "SourceType": "Project",
+      "ContentRoot": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/BlazorComponentUtilities.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\BlazorComponentUtilities.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\BlazorComponentUtilities.dll"
     },
     {
       "Identity": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Client\\obj\\Debug\\net6.0\\build-gz\\PNr+Kn7X.gz",
@@ -7252,6 +7286,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\index.html"
+    },
+    {
+      "Identity": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Server\\obj\\Debug\\net6.0\\scopedcss\\bundle\\Faith.Server.styles.css",
+      "SourceId": "Faith.Server",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Server\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
+      "BasePath": "_content/Faith.Server",
+      "RelativePath": "Faith.Server.styles.css",
+      "AssetKind": "All",
+      "AssetMode": "CurrentProject",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ApplicationBundle",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Server\\obj\\Debug\\net6.0\\scopedcss\\bundle\\Faith.Server.styles.css"
     }
   ]
 }

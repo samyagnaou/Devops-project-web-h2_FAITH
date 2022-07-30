@@ -1,0 +1,56 @@
+﻿@page "/youngster"
+@using Faith.Shared
+@inject HttpClient Http
+
+<PageTitle>Weather forecast</PageTitle>
+
+<h1>Weather forecast</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+@if (forecasts == null)
+{
+    <BSSpinner Color="BSColor.Info"/>
+}
+else
+{
+    <BSTable IsResponsive="true" IsStriped="true">
+        <BSTHead>
+            <BSTR>
+                <BSTD>#</BSTD>
+                <BSTD>First</BSTD>
+                <BSTD>Last</BSTD>
+                <BSTD>Handle</BSTD>
+            </BSTR>
+        </BSTHead>
+        <BSTBody>
+            <BSTR>
+                <BSTD>1</BSTD>
+                <BSTD>John</BSTD>
+                <BSTD>Doe</BSTD>
+                <BSTD>JohnDoe <br/>media.com</BSTD>
+            </BSTR>
+            <BSTR>
+                <BSTD>2</BSTD>
+                <BSTD>Jane</BSTD>
+                <BSTD>Doe</BSTD>
+                <BSTD>JaneDoe <br/>media.com</BSTD>
+            </BSTR>
+        </BSTBody>
+        <BSTFoot>
+            <BSTR>
+                <BSTD ColSpan="4">Spanned Table Footer Here</BSTD>
+            </BSTR>
+
+        </BSTFoot>
+    </BSTable>
+}
+
+@code {
+    private WeatherForecast[]? forecasts;
+
+    protected override async Task OnInitializedAsync()
+    {
+        forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("WeatherForecast");
+    }
+}
