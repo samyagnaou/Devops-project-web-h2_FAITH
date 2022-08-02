@@ -1,6 +1,9 @@
-﻿namespace Faith.Domain
+﻿using Ardalis.GuardClauses;
+using Faith.Domain.Common;
+
+namespace Faith.Domain.Users
 {
-    public class Username:ValueObject
+    public class Username : ValueObject
     {
         public string Firstname { get; set; }
         public string Lastname { get; set; }
