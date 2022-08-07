@@ -39,6 +39,7 @@ D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client
 D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.Win32.Primitives.dll
 D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.Win32.Registry.dll
 D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client\bin\Debug\net6.0\wwwroot\_framework\mscorlib.dll
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client\bin\Debug\net6.0\wwwroot\_framework\MudBlazor.dll
 D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client\bin\Debug\net6.0\wwwroot\_framework\netstandard.dll
 D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client\bin\Debug\net6.0\wwwroot\_framework\System.AppContext.dll
 D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client\bin\Debug\net6.0\wwwroot\_framework\System.Buffers.dll
@@ -245,6 +246,7 @@ D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client
 D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.Extensions.Configuration.Abstractions.dll.gz
 D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client\bin\Debug\net6.0\wwwroot\_framework\System.Runtime.Serialization.Xml.dll.gz
 D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client\bin\Debug\net6.0\wwwroot\_framework\System.Xml.XDocument.dll.gz
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client\bin\Debug\net6.0\wwwroot\_framework\MudBlazor.dll.gz
 D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client\bin\Debug\net6.0\wwwroot\_framework\System.Diagnostics.DiagnosticSource.dll.gz
 D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client\bin\Debug\net6.0\wwwroot\_framework\System.Security.Cryptography.OpenSsl.dll.gz
 D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client\bin\Debug\net6.0\wwwroot\_framework\System.Globalization.Extensions.dll.gz
@@ -426,6 +428,7 @@ D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client
 D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
 D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client\bin\Debug\net6.0\Microsoft.JSInterop.dll
 D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client\bin\Debug\net6.0\Microsoft.JSInterop.WebAssembly.dll
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client\bin\Debug\net6.0\MudBlazor.dll
 D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client\bin\Debug\net6.0\System.IO.Pipelines.dll
 D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client\bin\Debug\net6.0\Microsoft.CSharp.dll
 D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client\bin\Debug\net6.0\Microsoft.VisualBasic.Core.dll
@@ -630,6 +633,7 @@ D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client
 D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client\obj\Debug\net6.0\build-gz\+p8TKcBX.gz
 D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client\obj\Debug\net6.0\build-gz\lVj5S0g+.gz
 D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client\obj\Debug\net6.0\build-gz\MCQeMkSC.gz
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client\obj\Debug\net6.0\build-gz\aIz+dWiH.gz
 D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client\obj\Debug\net6.0\build-gz\6MCitXzh.gz
 D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client\obj\Debug\net6.0\build-gz\+BBWvZ0n.gz
 D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client\obj\Debug\net6.0\build-gz\y+4j8qPr.gz
@@ -812,20 +816,9 @@ D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client
 D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client\obj\Debug\net6.0\blazor.boot.json
 D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client\obj\Debug\net6.0\staticwebassets.build.json
 D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client\obj\Debug\net6.0\staticwebassets.development.json
-D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client\obj\Debug\net6.0\scopedcss\Shared\MainLayout.razor.rz.scp.css
-D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client\obj\Debug\net6.0\scopedcss\Shared\NavMenu.razor.rz.scp.css
 D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client\obj\Debug\net6.0\scopedcss\bundle\Faith.Client.styles.css
-D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client\obj\Debug\net6.0\scopedcss\projectbundle\Faith.Client.bundle.scp.css
 D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client\obj\Debug\net6.0\Faith.Client.csproj.CopyComplete
 D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client\obj\Debug\net6.0\Faith.Client.dll
 D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client\obj\Debug\net6.0\refint\Faith.Client.dll
 D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client\obj\Debug\net6.0\Faith.Client.pdb
 D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client\obj\Debug\net6.0\ref\Faith.Client.dll
-D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client\bin\Debug\net6.0\wwwroot\_framework\BlazorComponentUtilities.dll
-D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client\bin\Debug\net6.0\wwwroot\_framework\BlazorStrap.dll
-D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client\bin\Debug\net6.0\wwwroot\_framework\BlazorStrap.dll.gz
-D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client\bin\Debug\net6.0\wwwroot\_framework\BlazorComponentUtilities.dll.gz
-D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client\bin\Debug\net6.0\BlazorComponentUtilities.dll
-D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client\bin\Debug\net6.0\BlazorStrap.dll
-D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client\obj\Debug\net6.0\build-gz\PFhjYb3t.gz
-D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client\obj\Debug\net6.0\build-gz\iorrbmR5.gz

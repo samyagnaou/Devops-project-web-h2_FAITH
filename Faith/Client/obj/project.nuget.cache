@@ -1,11 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "H1OmgBhvsPezCXfWfmd1RazzuB6RmBjB0UUH49sKNfKpTcCbFm8Ta52Kg5mrkln+Rz5QO/9suDML6MqVtEprvg==",
+  "dgSpecHash": "13IeXBHLISIQWulxJyzaWKsHRc0uFxWk+c+AyXL7cscHLReoFv0UrV2pNzZhrXKtIPVGjQ232Q07JSfRfuZ5LA==",
   "success": true,
   "projectFilePath": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Client\\Faith.Client.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\samyratchet\\.nuget\\packages\\blazorcomponentutilities\\1.7.1\\blazorcomponentutilities.1.7.1.nupkg.sha512",
-    "C:\\Users\\samyratchet\\.nuget\\packages\\blazorstrap\\5.0.106\\blazorstrap.5.0.106.nupkg.sha512",
+    "C:\\Users\\samyratchet\\.nuget\\packages\\fluentvalidation\\11.1.1\\fluentvalidation.11.1.1.nupkg.sha512",
     "C:\\Users\\samyratchet\\.nuget\\packages\\microsoft.aspnetcore.authorization\\6.0.7\\microsoft.aspnetcore.authorization.6.0.7.nupkg.sha512",
     "C:\\Users\\samyratchet\\.nuget\\packages\\microsoft.aspnetcore.components\\6.0.7\\microsoft.aspnetcore.components.6.0.7.nupkg.sha512",
     "C:\\Users\\samyratchet\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\6.0.7\\microsoft.aspnetcore.components.analyzers.6.0.7.nupkg.sha512",
@@ -30,6 +29,7 @@
     "C:\\Users\\samyratchet\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
     "C:\\Users\\samyratchet\\.nuget\\packages\\microsoft.jsinterop\\6.0.7\\microsoft.jsinterop.6.0.7.nupkg.sha512",
     "C:\\Users\\samyratchet\\.nuget\\packages\\microsoft.jsinterop.webassembly\\6.0.7\\microsoft.jsinterop.webassembly.6.0.7.nupkg.sha512",
+    "C:\\Users\\samyratchet\\.nuget\\packages\\mudblazor\\6.0.13\\mudblazor.6.0.13.nupkg.sha512",
     "C:\\Users\\samyratchet\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
     "C:\\Users\\samyratchet\\.nuget\\packages\\system.io.pipelines\\6.0.3\\system.io.pipelines.6.0.3.nupkg.sha512",
     "C:\\Users\\samyratchet\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",

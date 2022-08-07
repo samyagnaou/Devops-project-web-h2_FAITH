@@ -1,0 +1,95 @@
+﻿@page "/leefgroep"
+@inject HttpClient Http
+@using Faith.Shared
+
+<PageTitle>Leefgroep</PageTitle>
+
+
+
+
+
+
+<MudPaper Height="200px" Class="mud-theme-primary" Style="overflow:hidden; position:relative;">
+    <MudDrawerContainer Class="mud-height-full">
+        <MudDrawer @bind-Open="@openLeft" Anchor="Anchor.Left" Elevation="0" Variant="@DrawerVariant.Persistent">
+            <MudDrawerHeader>
+                <MudText Typo="Typo.h6">My App</MudText>
+            </MudDrawerHeader>
+            <MudNavMenu>
+                <MudNavLink Match="NavLinkMatch.All" Icon="@Icons.Filled.Store">Store</MudNavLink>
+                <MudNavLink Match="NavLinkMatch.All" Icon="@Icons.Filled.LocalLibrary">Library</MudNavLink>
+                <MudNavLink Match="NavLinkMatch.All" Icon="@Icons.Filled.Forum">Community</MudNavLink>
+            </MudNavMenu>
+        </MudDrawer>
+        <MudDrawer @bind-Open="@openRight" Fixed="false" Anchor="Anchor.Right" Elevation="0" Variant="@DrawerVariant.Persistent">
+            <MudDrawerHeader>
+                <MudText Typo="Typo.h6">Settings</MudText>
+            </MudDrawerHeader>
+            <MudNavMenu>
+                <MudNavLink Match="NavLinkMatch.All" Icon="@Icons.Filled.AccountBox">Profile</MudNavLink>
+                <MudNavLink Match="NavLinkMatch.All" Icon="@Icons.Filled.ShoppingCart">Orders</MudNavLink>
+                <MudNavLink Match="NavLinkMatch.All" Icon="@Icons.Filled.History">Order History</MudNavLink>
+            </MudNavMenu>
+        </MudDrawer>
+        <MudButton Color="Color.Inherit" OnClick="@ToggleRightDrawer" StartIcon="@Icons.Filled.East" Class="mx-2">Toggle right</MudButton>
+        
+        
+        
+        <MudText Typo="Typo.h3" GutterBottom="true">Leefgroep</MudText>
+        @if (forecasts == null)
+        {
+            <MudProgressCircular Color="Color.Default" Indeterminate="true" />
+        }
+        else
+        {
+            <MudTable Items="forecasts" Hover="true" SortLabel="Sort By" Elevation="0">
+                <HeaderContent>
+                    <MudTh><MudTableSortLabel InitialDirection="SortDirection.Ascending" SortBy="new Func<WeatherForecast, object>(x=>x.Date)">Naam</MudTableSortLabel></MudTh>
+                    <MudTh><MudTableSortLabel SortBy="new Func<WeatherForecast, object>(x=>x.Summary!)">Rol</MudTableSortLabel></MudTh>
+                </HeaderContent>
+                <RowTemplate>
+                    <MudTd DataLabel="Date">@context.Date</MudTd>
+                    <MudTd DataLabel="Summary">@context.Summary</MudTd>
+                </RowTemplate>
+                <PagerContent>
+                    <MudTablePager PageSizeOptions="new int[]{50, 100}" />
+                </PagerContent>
+            </MudTable>
+        }
+
+
+        @code {
+            private WeatherForecast[]? forecasts;
+
+            protected override async Task OnInitializedAsync()
+            {
+                forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("WeatherForecast");
+            }
+        }
+        
+        
+        
+
+    </MudDrawerContainer>
+</MudPaper>
+
+@code
+{
+    [CascadingParameter]
+    public bool Rtl { get; set; }
+
+    bool openLeft = false;
+    bool openRight = false;
+
+    void ToggleLeftDrawer()
+    {
+        openLeft = !openLeft;
+    }
+
+    void ToggleRightDrawer()
+    {
+        openRight = !openRight;
+    }
+}
+
+

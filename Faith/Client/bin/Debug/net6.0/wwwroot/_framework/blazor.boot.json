@@ -7,8 +7,6 @@
   "linkerEnabled": false,
   "resources": {
     "assembly": {
-      "BlazorComponentUtilities.dll": "sha256-UapksNiQg3lu5QM9uVSLyjEuzRH\/7o22fmcmxcLAAeI=",
-      "BlazorStrap.dll": "sha256-8jKt9kHfGSYjF9GPz3QyCbXY6tYQd+lFvabBLTutBXI=",
       "Microsoft.AspNetCore.Authorization.dll": "sha256-hSXzdQFPBtfxBs3B2TFaykHyx2Mgqh21anN\/Gx+VKSo=",
       "Microsoft.AspNetCore.Components.dll": "sha256-BikLdQx36rYsSVwqNFVsuDwW4Soedlr\/SnAFSy5tjW8=",
       "Microsoft.AspNetCore.Components.Forms.dll": "sha256-92y2h3G1nlPZuHI7ZX3WI+lOUF3ipefJgi4gLswtgeQ=",
@@ -31,6 +29,7 @@
       "Microsoft.Extensions.Primitives.dll": "sha256-jOmoWSfsdQexH\/6QCA56gR1RMEqeix2iDDUBWbpAOQI=",
       "Microsoft.JSInterop.dll": "sha256-UMN0MIhXy6iiBoCH7TVNO7airH6YRx+Dtq3QNJ0b0rM=",
       "Microsoft.JSInterop.WebAssembly.dll": "sha256-TNVKFxQm+ZgKzHK5rCOcAC9sMNh87Kz6N3h5jS7B\/cg=",
+      "MudBlazor.dll": "sha256-YVtA+TtFIMp8sS2n+\/R6+\/IYJYD6\/0BHn0aZQDHb6JM=",
       "System.IO.Pipelines.dll": "sha256-6+E55JXedimdw1c1bDtVg4K7XuWjVWVTifH8QpfzXSY=",
       "Microsoft.CSharp.dll": "sha256-DBX+tbEtSR3vzMA1qJk3ZDTX2ZBhOIWNVh1PtWMDIXw=",
       "Microsoft.VisualBasic.Core.dll": "sha256-6Yh0Z6NJFcqVLkbAVs2n6VSqdARNIVJludvYrOfV7Nc=",
@@ -198,15 +197,15 @@
       "mscorlib.dll": "sha256-wmk56X5dbt29rrFZKEFpOFjotkZA+JSxA4fqkgmBsOU=",
       "netstandard.dll": "sha256-CvlfDmNgFRYT7l\/xZKu91FlbTFyLG\/5cH7YX63k9ghE=",
       "System.Private.CoreLib.dll": "sha256-aF4imeOpA59D6F5qCLabzkeY7MvRZzNYzavhB\/bdxvM=",
-      "Faith.Shared.dll": "sha256-J574GjwVRe8F2CDxM\/Mf\/m8txJ6jmkpsiEjQJD4Vcb8=",
-      "Faith.Client.dll": "sha256-MPrsYrRP+Q6WXnbs+LB\/8Nrgoq12IDwVRpjLwhptab4="
+      "Faith.Shared.dll": "sha256-J2S6wjzj8Fq3oGZyY2ONKOA2yoZQYGc4498BgLP1EEY=",
+      "Faith.Client.dll": "sha256-AZQ9fxuSRCnkma1KtYV8A4sbGb3ELVxkPZ8Z+6btrBk="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
-      "Faith.Shared.pdb": "sha256-af\/kNYAWPF+pwRJ7+cS4mX72JI9pglQDX7U2+faVzqE=",
-      "Faith.Client.pdb": "sha256-xKlYOqUANUeCdNJp0QwgCyBgZE0ad14id9QmA04Yh4Q="
+      "Faith.Shared.pdb": "sha256-nq\/DpIjCA+AEg1FBItRh1zeui87fexPuUF1g34Rv\/QU=",
+      "Faith.Client.pdb": "sha256-CxcATV8i2yxnxMNBfLCgl99PKFIDY2p1HpDJUHLIwjo="
     },
     "runtime": {
       "dotnet.6.0.7.lwqc5nreb8.js": "sha256-pvJcJ6jtDSfxgXm03QYRTm4aAi9PSzMSJODReHtvASY=",

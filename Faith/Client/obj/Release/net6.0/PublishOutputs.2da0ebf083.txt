@@ -1,0 +1,1 @@
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client\obj\Release\net6.0\browser-wasm\PubTmp\Out\web.config

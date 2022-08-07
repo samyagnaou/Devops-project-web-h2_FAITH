@@ -1,30 +1,30 @@
 ﻿using Ardalis.GuardClauses;
 using Faith.Domain.Common;
 
-namespace Faith.Domain.Users
+namespace Faith.Domain.Users;
+
+public class User : Entity
 {
-    public class User : Entity
+    public Username Name { get; private set; }
+    public string Email { get; set; }
+    public DateTime DateOfBirth { get; set; }
+    public Gender Gender { get; set; }
+
+    private User()
     {
-        public Username Name { get; private set; }
-        public Gender Gender { get; set; }
-        public string Email { get; set; }
-        public DateTime DateOfBirth { get; set; }
 
-        public User(Username name, Gender gender, string email, DateTime dateOfBirth)
-        {
-            Name = Guard.Against.Null(name, nameof(name));
-            Gender = Guard.Against.Null(gender, nameof(gender));
-            Email = Guard.Against.Null(email, nameof(email));
-            DateOfBirth = Guard.Against.Null(dateOfBirth, nameof(dateOfBirth));
-            //Note: Add check for role of the user
-        }
+    }
+    public User(Username name, string email, DateTime dateOfBirth, Gender gender)
+    {
+        Name = Guard.Against.Null(name, nameof(name));
+        Email = Guard.Against.Null(email, nameof(email));
+        DateOfBirth = Guard.Against.Null(dateOfBirth, nameof(dateOfBirth));
+        Gender = Guard.Against.Null(gender, nameof(gender));
+        //Role = nameof(User);
+    }
 
-        public string GetUsername()
-        {
-            return this.Name.Firstname + ' ' + this.Name.Lastname;
-        }
-
-        //Note: PlacePost function
-
+    public string GetUsername()
+    {
+        return this.Name.Firstname + ' ' + this.Name.Lastname;
     }
 }

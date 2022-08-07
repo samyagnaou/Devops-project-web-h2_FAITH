@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "9cdvbogi/o6/ZrSXqiSVJlD/lx3mEgy8obzMPB+X6pi0z7PuAWgoMteE8Qk9lNmAuw+HLR+abEk/ulz5J/XzoQ==",
+  "dgSpecHash": "LxLgcVlX2vbIFqCDCCwIt/+DZshw9kmmDH6ZT0+IR0aCtajiR5PL8BC5sRzaMcEqjXmESA9QjRiO8RhWDmtEzQ==",
   "success": true,
   "projectFilePath": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Shared\\Faith.Shared.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\samyratchet\\.nuget\\packages\\fluentvalidation\\11.1.1\\fluentvalidation.11.1.1.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -2,32 +2,13 @@
   "version": 3,
   "targets": {
     "net6.0": {
-      "BlazorComponentUtilities/1.7.1": {
+      "FluentValidation/11.1.1": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/BlazorComponentUtilities.dll": {}
+          "lib/net6.0/FluentValidation.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/BlazorComponentUtilities.dll": {}
-        }
-      },
-      "BlazorStrap/5.0.106": {
-        "type": "package",
-        "dependencies": {
-          "BlazorComponentUtilities": "1.7.1",
-          "Microsoft.AspNetCore.Components.Web": "6.0.7"
-        },
-        "compile": {
-          "lib/net6.0/BlazorStrap.dll": {}
-        },
-        "runtime": {
-          "lib/net6.0/BlazorStrap.dll": {}
-        },
-        "build": {
-          "buildTransitive/BlazorStrap.props": {}
-        },
-        "buildMultiTargeting": {
-          "buildMultiTargeting/BlazorStrap.props": {}
+          "lib/net6.0/FluentValidation.dll": {}
         }
       },
       "Microsoft.AspNetCore.Authorization/6.0.7": {
@@ -341,6 +322,25 @@
         },
         "runtime": {
           "lib/net6.0/Microsoft.JSInterop.WebAssembly.dll": {}
+        }
+      },
+      "MudBlazor/6.0.13": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components": "6.0.7",
+          "Microsoft.AspNetCore.Components.Web": "6.0.7"
+        },
+        "compile": {
+          "lib/net6.0/MudBlazor.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/MudBlazor.dll": {}
+        },
+        "build": {
+          "buildTransitive/MudBlazor.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/MudBlazor.props": {}
         }
       },
       "System.Diagnostics.DiagnosticSource/6.0.0": {
@@ -422,6 +422,9 @@
       "Faith.Shared/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "FluentValidation": "11.1.1"
+        },
         "compile": {
           "bin/placeholder/Faith.Shared.dll": {}
         },
@@ -431,32 +434,13 @@
       }
     },
     "net6.0/browser-wasm": {
-      "BlazorComponentUtilities/1.7.1": {
+      "FluentValidation/11.1.1": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/BlazorComponentUtilities.dll": {}
+          "lib/net6.0/FluentValidation.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/BlazorComponentUtilities.dll": {}
-        }
-      },
-      "BlazorStrap/5.0.106": {
-        "type": "package",
-        "dependencies": {
-          "BlazorComponentUtilities": "1.7.1",
-          "Microsoft.AspNetCore.Components.Web": "6.0.7"
-        },
-        "compile": {
-          "lib/net6.0/BlazorStrap.dll": {}
-        },
-        "runtime": {
-          "lib/net6.0/BlazorStrap.dll": {}
-        },
-        "build": {
-          "buildTransitive/BlazorStrap.props": {}
-        },
-        "buildMultiTargeting": {
-          "buildMultiTargeting/BlazorStrap.props": {}
+          "lib/net6.0/FluentValidation.dll": {}
         }
       },
       "Microsoft.AspNetCore.Authorization/6.0.7": {
@@ -772,6 +756,25 @@
           "lib/net6.0/Microsoft.JSInterop.WebAssembly.dll": {}
         }
       },
+      "MudBlazor/6.0.13": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components": "6.0.7",
+          "Microsoft.AspNetCore.Components.Web": "6.0.7"
+        },
+        "compile": {
+          "lib/net6.0/MudBlazor.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/MudBlazor.dll": {}
+        },
+        "build": {
+          "buildTransitive/MudBlazor.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/MudBlazor.props": {}
+        }
+      },
       "System.Diagnostics.DiagnosticSource/6.0.0": {
         "type": "package",
         "dependencies": {
@@ -845,6 +848,9 @@
       "Faith.Shared/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "FluentValidation": "11.1.1"
+        },
         "compile": {
           "bin/placeholder/Faith.Shared.dll": {}
         },
@@ -855,39 +861,25 @@
     }
   },
   "libraries": {
-    "BlazorComponentUtilities/1.7.1": {
-      "sha512": "m73xpJYtSd7tlOowMslyAvWDipW9bOTWJzGnCSQJK9tm4fz6xXQZbAbTDydmV9bxhTrzmJMMRGsAEnSVZjWVjg==",
+    "FluentValidation/11.1.1": {
+      "sha512": "0rviOsKbNzoQUQsagwt1WVVYKSDfaZboKIvdfL4T8xSsX2ZUzJ5sIm1pdV2uLpZysgdpBsOAAnGMabewTMQhzg==",
       "type": "package",
-      "path": "blazorcomponentutilities/1.7.1",
+      "path": "fluentvalidation/11.1.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "LICENSE.txt",
-        "blazor-glove-256.jpg",
-        "blazorcomponentutilities.1.7.1.nupkg.sha512",
-        "blazorcomponentutilities.nuspec",
-        "lib/netstandard2.0/BlazorComponentUtilities.dll"
-      ]
-    },
-    "BlazorStrap/5.0.106": {
-      "sha512": "lM//XdITeSSrCkKOVoaxZmSvEWKZmnkp/qj6/U+r3K+ypvKrhC/TI8PvtphtIoOXUNcHTmb+tVVWF+lhrCB7/A==",
-      "type": "package",
-      "path": "blazorstrap/5.0.106",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "blazorstrap.5.0.106.nupkg.sha512",
-        "blazorstrap.nuspec",
-        "build/BlazorStrap.props",
-        "build/Microsoft.AspNetCore.StaticWebAssets.props",
-        "buildMultiTargeting/BlazorStrap.props",
-        "buildTransitive/BlazorStrap.props",
-        "lib/net5.0/BlazorStrap.dll",
-        "lib/net6.0/BlazorStrap.dll",
-        "staticwebassets/BlazorStrap.bundle.scp.css",
-        "staticwebassets/blazorstrap.js",
-        "staticwebassets/blazorstrap.min.js",
-        "staticwebassets/popper.min.js"
+        "README.md",
+        "fluent-validation-icon.png",
+        "fluentvalidation.11.1.1.nupkg.sha512",
+        "fluentvalidation.nuspec",
+        "lib/net5.0/FluentValidation.dll",
+        "lib/net5.0/FluentValidation.xml",
+        "lib/net6.0/FluentValidation.dll",
+        "lib/net6.0/FluentValidation.xml",
+        "lib/netstandard2.0/FluentValidation.dll",
+        "lib/netstandard2.0/FluentValidation.xml",
+        "lib/netstandard2.1/FluentValidation.dll",
+        "lib/netstandard2.1/FluentValidation.xml"
       ]
     },
     "Microsoft.AspNetCore.Authorization/6.0.7": {
@@ -1493,6 +1485,29 @@
         "microsoft.jsinterop.webassembly.nuspec"
       ]
     },
+    "MudBlazor/6.0.13": {
+      "sha512": "YhmDIeqdqEXLE/MZ0xDZWyfOwynBGRgwVXCYDhO6PSvi1KeGNNvQ8yN0DP0ewCZyNcneyslowmxu2YzG9ThEcg==",
+      "type": "package",
+      "path": "mudblazor/6.0.13",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "Nuget.png",
+        "build/Microsoft.AspNetCore.StaticWebAssets.props",
+        "build/MudBlazor.props",
+        "buildMultiTargeting/MudBlazor.props",
+        "buildTransitive/MudBlazor.props",
+        "lib/net6.0/MudBlazor.dll",
+        "lib/net6.0/MudBlazor.xml",
+        "mudblazor.6.0.13.nupkg.sha512",
+        "mudblazor.nuspec",
+        "staticwebassets/MudBlazor.min.css",
+        "staticwebassets/MudBlazor.min.css.gz",
+        "staticwebassets/MudBlazor.min.js",
+        "staticwebassets/MudBlazor.min.js.gz"
+      ]
+    },
     "System.Diagnostics.DiagnosticSource/6.0.0": {
       "sha512": "frQDfv0rl209cKm1lnwTgFPzNigy2EKk1BS3uAvHvlBVKe5cymGyHO+Sj+NLv5VF/AhHsqPIUUwya5oV4CHMUw==",
       "type": "package",
@@ -1657,10 +1672,10 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "BlazorStrap >= 5.0.106",
       "Faith.Shared >= 1.0.0",
       "Microsoft.AspNetCore.Components.WebAssembly >= 6.0.7",
-      "Microsoft.AspNetCore.Components.WebAssembly.DevServer >= 6.0.7"
+      "Microsoft.AspNetCore.Components.WebAssembly.DevServer >= 6.0.7",
+      "MudBlazor >= 6.0.13"
     ]
   },
   "packageFolders": {
@@ -1706,10 +1721,6 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
-          "BlazorStrap": {
-            "target": "Package",
-            "version": "[5.0.106, )"
-          },
           "Microsoft.AspNetCore.Components.WebAssembly": {
             "target": "Package",
             "version": "[6.0.7, )"
@@ -1718,6 +1729,10 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[6.0.7, )"
+          },
+          "MudBlazor": {
+            "target": "Package",
+            "version": "[6.0.13, )"
           }
         },
         "imports": [

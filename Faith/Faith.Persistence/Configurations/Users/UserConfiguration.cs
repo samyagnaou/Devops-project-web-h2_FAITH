@@ -14,8 +14,8 @@ internal class UserConfiguration : IEntityTypeConfiguration<User>
             userName.Property(d => d.Lastname).HasColumnName("Lastname").IsRequired();
         });
 
-        builder.Property(u => u.Gender).IsRequired();
         builder.Property(u => u.Email).HasMaxLength(128).IsRequired();
         builder.Property(u => u.DateOfBirth).IsRequired();
+        builder.Property(u => u.Gender).IsRequired();
     }
 }
