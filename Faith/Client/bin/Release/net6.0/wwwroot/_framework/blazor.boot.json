@@ -7,6 +7,7 @@
   "linkerEnabled": false,
   "resources": {
     "assembly": {
+      "FluentValidation.dll": "sha256-XUAMUKBcZlj75Vl9ExD5To4VZoS+5lkDSFJYL0xriXo=",
       "Microsoft.AspNetCore.Authorization.dll": "sha256-hSXzdQFPBtfxBs3B2TFaykHyx2Mgqh21anN\/Gx+VKSo=",
       "Microsoft.AspNetCore.Components.dll": "sha256-BikLdQx36rYsSVwqNFVsuDwW4Soedlr\/SnAFSy5tjW8=",
       "Microsoft.AspNetCore.Components.Forms.dll": "sha256-92y2h3G1nlPZuHI7ZX3WI+lOUF3ipefJgi4gLswtgeQ=",
@@ -197,15 +198,15 @@
       "mscorlib.dll": "sha256-wmk56X5dbt29rrFZKEFpOFjotkZA+JSxA4fqkgmBsOU=",
       "netstandard.dll": "sha256-CvlfDmNgFRYT7l\/xZKu91FlbTFyLG\/5cH7YX63k9ghE=",
       "System.Private.CoreLib.dll": "sha256-aF4imeOpA59D6F5qCLabzkeY7MvRZzNYzavhB\/bdxvM=",
-      "Faith.Shared.dll": "sha256-iagbvPM8g5YvRvepim7+GLOkpH+QUonnDflK52WgriU=",
-      "Faith.Client.dll": "sha256-KAg9WMv6VbSlGaJeutGdH43NerBjDpPk5MIcNAekAf4="
+      "Faith.Shared.dll": "sha256-0sBXVe8GQhXSeLm8fdfc0smpRQ8MQ6Db9orhOLDp8kQ=",
+      "Faith.Client.dll": "sha256-uM7n27RCdbbzaFVf6hrrt+HRFuCgtxM+ZpTvA62KFYk="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
-      "Faith.Shared.pdb": "sha256-cyoGk9xorOA7R0mPRX7ZHCyQEHovSfLffl1IWYeZaD0=",
-      "Faith.Client.pdb": "sha256-5YFQu2JHMcSsug0m2xh22ekTpMEHuy3exKE+qGrOaZ4="
+      "Faith.Shared.pdb": "sha256-W5RVWVemDzIFbII5l9DBJ1UEtLOWK6XiM6hCle7iKxw=",
+      "Faith.Client.pdb": "sha256-TAXiU5UhEXHEKQkdT8aSGR8pvTWuNxTaVuDU3pShqOc="
     },
     "runtime": {
       "dotnet.6.0.7.lwqc5nreb8.js": "sha256-pvJcJ6jtDSfxgXm03QYRTm4aAi9PSzMSJODReHtvASY=",

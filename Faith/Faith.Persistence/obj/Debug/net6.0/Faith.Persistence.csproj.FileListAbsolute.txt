@@ -1,0 +1,17 @@
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Persistence\bin\Debug\net6.0\Faith.Persistence.deps.json
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Persistence\bin\Debug\net6.0\Faith.Persistence.runtimeconfig.json
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Persistence\bin\Debug\net6.0\Faith.Persistence.dll
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Persistence\bin\Debug\net6.0\Faith.Persistence.pdb
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Persistence\bin\Debug\net6.0\Faith.Domain.dll
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Persistence\bin\Debug\net6.0\Faith.Domain.pdb
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Persistence\obj\Debug\net6.0\Faith.Persistence.csproj.AssemblyReference.cache
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Persistence\obj\Debug\net6.0\Faith.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Persistence\obj\Debug\net6.0\Faith.Persistence.AssemblyInfoInputs.cache
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Persistence\obj\Debug\net6.0\Faith.Persistence.AssemblyInfo.cs
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Persistence\obj\Debug\net6.0\Faith.Persistence.csproj.CoreCompileInputs.cache
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Persistence\obj\Debug\net6.0\Faith.Persistence.csproj.CopyComplete
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Persistence\obj\Debug\net6.0\Faith.Persistence.dll
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Persistence\obj\Debug\net6.0\refint\Faith.Persistence.dll
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Persistence\obj\Debug\net6.0\Faith.Persistence.pdb
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Persistence\obj\Debug\net6.0\Faith.Persistence.genruntimeconfig.cache
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Persistence\obj\Debug\net6.0\ref\Faith.Persistence.dll

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "yobzM5aZEjQkZUryKmVEF0fP2VMBzJaFC3lbwvbzaJE=",
+  "Hash": "IGImI2MxAHAbpmmyxDqSRzZxDB9wlVgtpZakUb8JK44=",
   "Source": "Faith.Client",
   "BasePath": "/",
   "Mode": "Root",
@@ -236,6 +236,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Shared\\bin\\Release\\net6.0\\Faith.Shared.pdb"
+    },
+    {
+      "Identity": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Client\\bin\\Release\\net6.0\\wwwroot\\_framework\\FluentValidation.dll",
+      "SourceId": "Faith.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Client\\bin\\Release\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/FluentValidation.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\samyratchet\\.nuget\\packages\\fluentvalidation\\11.1.1\\lib\\net6.0\\FluentValidation.dll"
     },
     {
       "Identity": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Client\\bin\\Release\\net6.0\\wwwroot\\_framework\\icudt.dat",
@@ -6322,6 +6339,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Client\\bin\\Release\\net6.0\\wwwroot\\_framework\\System.Runtime.CompilerServices.Unsafe.dll"
+    },
+    {
+      "Identity": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Client\\obj\\Release\\net6.0\\build-gz\\scC8m3Kk.gz",
+      "SourceId": "Faith.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Client\\bin\\Release\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/FluentValidation.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Client\\bin\\Release\\net6.0\\wwwroot\\_framework\\FluentValidation.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Client\\bin\\Release\\net6.0\\wwwroot\\_framework\\FluentValidation.dll"
     },
     {
       "Identity": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Client\\obj\\Release\\net6.0\\build-gz\\smr+XnJw.gz",

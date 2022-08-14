@@ -1,0 +1,12 @@
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Domain\bin\Release\net6.0\Faith.Domain.deps.json
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Domain\bin\Release\net6.0\Faith.Domain.dll
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Domain\bin\Release\net6.0\Faith.Domain.pdb
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Domain\obj\Release\net6.0\Faith.Domain.csproj.AssemblyReference.cache
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Domain\obj\Release\net6.0\Faith.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Domain\obj\Release\net6.0\Faith.Domain.AssemblyInfoInputs.cache
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Domain\obj\Release\net6.0\Faith.Domain.AssemblyInfo.cs
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Domain\obj\Release\net6.0\Faith.Domain.csproj.CoreCompileInputs.cache
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Domain\obj\Release\net6.0\Faith.Domain.dll
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Domain\obj\Release\net6.0\refint\Faith.Domain.dll
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Domain\obj\Release\net6.0\Faith.Domain.pdb
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Domain\obj\Release\net6.0\ref\Faith.Domain.dll

@@ -1,0 +1,15 @@
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Services\bin\Debug\net6.0\Faith.Services.deps.json
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Services\bin\Debug\net6.0\Faith.Services.dll
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Services\bin\Debug\net6.0\Faith.Services.pdb
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Services\bin\Debug\net6.0\Faith.Shared.dll
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Services\bin\Debug\net6.0\Faith.Shared.pdb
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Services\obj\Debug\net6.0\Faith.Services.csproj.AssemblyReference.cache
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Services\obj\Debug\net6.0\Faith.Services.GeneratedMSBuildEditorConfig.editorconfig
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Services\obj\Debug\net6.0\Faith.Services.AssemblyInfoInputs.cache
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Services\obj\Debug\net6.0\Faith.Services.AssemblyInfo.cs
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Services\obj\Debug\net6.0\Faith.Services.csproj.CoreCompileInputs.cache
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Services\obj\Debug\net6.0\Faith.Services.csproj.CopyComplete
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Services\obj\Debug\net6.0\Faith.Services.dll
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Services\obj\Debug\net6.0\refint\Faith.Services.dll
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Services\obj\Debug\net6.0\Faith.Services.pdb
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Services\obj\Debug\net6.0\ref\Faith.Services.dll

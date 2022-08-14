@@ -822,3 +822,7 @@ D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client
 D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client\obj\Debug\net6.0\refint\Faith.Client.dll
 D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client\obj\Debug\net6.0\Faith.Client.pdb
 D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client\obj\Debug\net6.0\ref\Faith.Client.dll
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client\bin\Debug\net6.0\wwwroot\_framework\FluentValidation.dll
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client\bin\Debug\net6.0\wwwroot\_framework\FluentValidation.dll.gz
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client\bin\Debug\net6.0\FluentValidation.dll
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Client\obj\Debug\net6.0\build-gz\scC8m3Kk.gz

@@ -1,12 +1,15 @@
-﻿using Faith.Persistence;
-using Faith.Shared.User;
-using FluentValidation.AspNetCore;
-using Microsoft.AspNetCore.Hosting.StaticWebAssets;
-using Microsoft.AspNetCore.ResponseCompression;
+﻿using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.OpenApi.Models;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.AspNetCore.Hosting.StaticWebAssets;
+using Faith.Infrastructure.Data;
 
 var builder = WebApplication.CreateBuilder(args);
+var config = builder.Configuration;
+var connectionString = config.GetConnectionString("Default");
+var jwtSettings = config.GetSection("JWTSettings");
 
 StaticWebAssetsLoader.UseStaticWebAssets(builder.Environment, builder.Configuration);
 
@@ -21,34 +24,63 @@ builder.Services.AddDbContext<FaithDbContext>(options =>
                 maxRetryDelay: TimeSpan.FromSeconds(30),
                 errorNumbersToAdd: null);
         });
-// for development purpose, disable when in production
-//enkel tijdens developmenttijd onderste 2 gebruiken, anders kan je sensitive data zien
+    //Only for dev purpose
     options.EnableDetailedErrors();
     options.EnableSensitiveDataLogging();
+});
 
-   
+// adding authentication/authorisation instead of auth0, dont see any value to add third party tools but will add it when there is time left
+builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+    .AddEntityFrameworkStores<FaithDbContext>();
+
+
+builder.Services.AddAuthentication(opt =>
+{
+    opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+
+        ValidIssuer = jwtSettings["validIssuer"],
+        ValidAudience = jwtSettings["validAudience"],
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings["securityKey"]))
+    };
+});
+
+
+//builder.Services.AddSwaggerGen(c =>
+//{
+//    c.CustomSchemaIds(x => x.FullName);
+//    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Api", Version = "v1" });
+//
+//});
+
+
+
+
+
+
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
-builder.Services.AddSwaggerGen(c =>
-{
-    c.CustomSchemaIds(x => $"{x.DeclaringType.Name}.{x.Name}");
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Api", Version = "v1" });
-    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
-    {
-        Name = "Authorization",
-        Type = SecuritySchemeType.ApiKey,
-        Scheme = "Bearer",
-        BearerFormat = "JWT",
-        In = ParameterLocation.Header,
-        Description = "JWT Authorization header using the Bearer scheme, make sure to input 'Bearer TOKEN'"
 
-    });
 
-    builder.Services.AddScoped<IUserService, UserService>();
+
+
+
 
 var app = builder.Build();
 
+//app.UseSwagger();
+//app.UseSwaggerUI(c =>
+//    c.SwaggerEndpoint("/swagger/v1/swagger.json","Faith API V1")
+//    );
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

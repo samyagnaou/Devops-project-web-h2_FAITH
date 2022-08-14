@@ -81,9 +81,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Faith.Domain\\Faith.Domain.csproj",
-      "projectName": "Faith.Domain",
-      "projectPath": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Faith.Domain\\Faith.Domain.csproj",
+      "projectUniqueName": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Faith.Domain\\Faith.Core.csproj",
+      "projectName": "Faith.Core",
+      "projectPath": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Faith.Domain\\Faith.Core.csproj",
       "packagesPath": "C:\\Users\\samyratchet\\.nuget\\packages\\",
       "outputPath": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Faith.Domain\\obj\\",
       "projectStyle": "PackageReference",
@@ -134,7 +134,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.303\\RuntimeIdentifierGraph.json"
       }
     }
   }

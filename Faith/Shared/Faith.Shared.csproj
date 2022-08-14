@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFramework>net6.0</TargetFramework>
@@ -11,10 +11,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="User\" />
+	  <PackageReference Include="FluentValidation" Version="11.1.1" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="FluentValidation" Version="11.1.1" />
+	  <Folder Include="Models\Responses\" />
+	  <Folder Include="Models\Requests\" />
 	</ItemGroup>
 </Project>
