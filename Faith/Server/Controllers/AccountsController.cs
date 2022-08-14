@@ -1,6 +1,9 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using Faith.Core.Interfaces;
+using Faith.Core.Models;
+using Faith.Shared;
 using Faith.Shared.Models.Requests;
 using Faith.Shared.Models.Responses;
 using Microsoft.AspNetCore.Identity;
@@ -15,12 +18,16 @@ namespace Faith.Server.Controllers
     public class AccountsController : ApiControllerBase
     {
         private readonly UserManager<IdentityUser> _userManager;
+        private readonly IStudentService _studentService;
+        private readonly IMentorService _mentorService;
         private readonly IConfiguration _config;
         private readonly IConfigurationSection _jwtSettings;
 
-        public AccountsController(UserManager<IdentityUser> userManager, IConfiguration config)
+        public AccountsController(IStudentService studentService, IMentorService mentorService, UserManager<IdentityUser> userManager, IConfiguration config)
         {
             _userManager = userManager;
+            _studentService = studentService;
+            _mentorService = mentorService;
             _config = config;
             _jwtSettings = _config.GetSection("JWTSettings");
         }
@@ -33,7 +40,7 @@ namespace Faith.Server.Controllers
                 return Unauthorized(new UserLoginResponse { ErrorMessage = "Invalid Authentication" });
 
             var signingCredentials = GetSigningCredentials();
-            var claims = GetClaims(user);
+            var claims = GetClaimsAsync(user);
             var tokenOptions = GenerateTokenOptions(signingCredentials, claims);
             var token = new JwtSecurityTokenHandler().WriteToken(tokenOptions);
 
@@ -41,23 +48,103 @@ namespace Faith.Server.Controllers
         }
 
         [HttpPost("Register")]
-        public async Task<IActionResult> RegisterUser([FromBody] RegisterUserRequest request)
+        public async Task<IActionResult> RegisterStudent([FromBody] RegisterUserRequest request)
         {
             if (request == null || !ModelState.IsValid)
                 return BadRequest();
-            var user = new IdentityUser { UserName = request.Email, Email = request.Email };
 
-            var result = await _userManager.CreateAsync(user, request.Password);
-            if (!result.Succeeded)
+            var (user, errors) = await CreateUserWithRole(request.Email, request.Password, Roles.Student);
+            if (errors.Any())
             {
-                return BadRequest(new RegisterUserResponse
+                return UnprocessableEntity(new RegisterUserResponse
                 {
                     IsSuccessfulRegistration = false,
-                    Errors = result.Errors.Select(e => e.Description)
+                    Errors = errors
+                });
+            }
+
+            var isMemberCreated = await CreateMember(user.Id, Roles.Student, new());
+            if (!isMemberCreated)
+            {
+                await _userManager.DeleteAsync(user);
+                return UnprocessableEntity(new RegisterUserResponse
+                {
+                    IsSuccessfulRegistration = false,
+                    Errors = errors
                 });
             }
 
             return StatusCode(201);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateUserWithRole([FromBody] CreateUserWithRole request)
+        {
+            if (request == null || !ModelState.IsValid)
+                return BadRequest();
+
+            var (user, errors) = await CreateUserWithRole(request.Email, request.Password, request.Role);
+            if (errors.Any())
+            {
+                return UnprocessableEntity(new RegisterUserResponse
+                {
+                    IsSuccessfulRegistration = false,
+                    Errors = errors
+                });
+            }
+
+            var isMemberCreated = await CreateMember(user.Id, request.Role, request.MemberDetails);
+            if (!isMemberCreated)
+            {
+                await _userManager.DeleteAsync(user);
+                return UnprocessableEntity(new RegisterUserResponse
+                {
+                    IsSuccessfulRegistration = false,
+                    Errors = errors
+                });
+            }
+
+            return StatusCode(201);
+        }
+
+        private async Task<(IdentityUser, IEnumerable<string>)> CreateUserWithRole(
+            string email,
+            string password,
+            string role)
+        {
+            var user = new IdentityUser { UserName = email, Email = email };
+
+            var result = await _userManager.CreateAsync(user, password);
+            if (!result.Succeeded)
+            {
+                return (user, result.Errors.Select(e => e.Description));
+            }
+            result = await _userManager.AddToRoleAsync(user, role);
+            if (!result.Succeeded)
+            {
+                return (user, result.Errors.Select(e => e.Description));
+            }
+            return (user, result.Errors.Select(e => e.Description));
+        }
+
+        private async Task<bool> CreateMember(
+            string userId,
+            string role,
+            MemberDetails details)
+        {
+            bool isMemberCreated = true;
+            details.MemberId = userId;
+
+            switch (role)
+            {
+                case Roles.Student:
+                    isMemberCreated = await _studentService.CreateNewStudent(details);
+                    break;
+                case Roles.Mentor:
+                    isMemberCreated = await _mentorService.CreateNewMentor(details);
+                    break;
+            }
+            return isMemberCreated;
         }
 
         private SigningCredentials GetSigningCredentials()
@@ -69,12 +156,18 @@ namespace Faith.Server.Controllers
         }
 
 
-        private List<Claim> GetClaims(IdentityUser user)
+        private async Task<List<Claim>> GetClaimsAsync(IdentityUser user)
         {
             var claims = new List<Claim>
             {
                 new Claim(ClaimTypes.Name, user.Email)
             };
+
+            var roles = await _userManager.GetRolesAsync(user);
+            foreach (var role in roles)
+            {
+                claims.Add(new Claim(ClaimTypes.Role, role));
+            }
 
             return claims;
         }

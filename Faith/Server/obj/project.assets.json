@@ -951,6 +951,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "Faith.Core": "1.0.0",
           "FluentValidation": "11.1.1"
         },
         "compile": {

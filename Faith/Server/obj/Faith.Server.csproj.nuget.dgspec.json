@@ -334,7 +334,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Faith.Domain\\Faith.Core.csproj": {
+                "projectPath": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Faith.Domain\\Faith.Core.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

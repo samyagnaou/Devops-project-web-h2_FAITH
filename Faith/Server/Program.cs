@@ -1,10 +1,14 @@
 ﻿using System.Text;
+using Faith.Core.Interfaces;
+using Faith.Core.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.AspNetCore.Hosting.StaticWebAssets;
 using Faith.Infrastructure.Data;
+using Faith.Infrastructure.Data.Repositories;
+using Faith.Server.Utilities;
 
 var builder = WebApplication.CreateBuilder(args);
 var config = builder.Configuration;
@@ -61,7 +65,12 @@ builder.Services.AddAuthentication(opt =>
 //
 //});
 
+builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+builder.Services.AddScoped<IStudentRepository, StudentRepository>();
 
+builder.Services.AddScoped<IStudentService, StudentService>();
+builder.Services.AddScoped<IMessageService, MessageService>();
+builder.Services.AddScoped<IMentorService, MentorService>();
 
 
 
@@ -104,5 +113,8 @@ app.UseRouting();
 app.MapRazorPages();
 app.MapControllers();
 app.MapFallbackToFile("index.html");
+
+//feed db
+await DbInitializer.SeedAdminUser(builder.Services.BuildServiceProvider());
 
 app.Run();

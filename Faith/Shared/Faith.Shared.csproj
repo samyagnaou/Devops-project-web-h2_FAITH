@@ -17,5 +17,10 @@
 	<ItemGroup>
 	  <Folder Include="Models\Responses\" />
 	  <Folder Include="Models\Requests\" />
+	  <Folder Include="Extensions\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Faith.Domain\Faith.Core.csproj" />
 	</ItemGroup>
 </Project>
