@@ -9,12 +9,13 @@ public class Student : MemberDetails
 
     public Student() { }
 
-    public Student(MemberDetails details)
+    public Student(MemberProfile profile)
     {
-        FirstName = details.FirstName;
-        LastName = details.LastName;
-        Gender = details.Gender;
-        BirthDate = details.BirthDate;
-        Gender = details.Gender;
+        MemberId = profile.MemberId;
+        FirstName = profile.FirstName;
+        LastName = profile.LastName;
+        Gender = profile.Gender;
+        BirthDate = profile.BirthDate;
+        Gender = profile.Gender;
     }
 }

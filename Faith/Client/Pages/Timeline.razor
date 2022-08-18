@@ -1,0 +1,55 @@
+﻿@page "/timeline"
+@inherits TimelineBase
+@using Microsoft.AspNetCore.Components
+@using Faith.Shared.Constants
+@using Faith.Shared.Models.Requests
+
+<PageTitle>Timeline</PageTitle>
+
+<AuthorizeView Roles="@Roles.Student">
+    <MudStack Row="true" Class="mb-4">
+        <MudTextField @bind-Value="PostMessageRequest.Text"
+                      Label="Send your message"
+                      Variant="Variant.Text"
+                      Margin="Margin.Dense"></MudTextField>
+        <MudButton Variant="Variant.Filled"
+                   EndIcon="@Icons.Material.Filled.Send"
+                   Color="Color.Primary"
+                   OnClick="PostMessage">
+            Send
+        </MudButton>
+    </MudStack>
+</AuthorizeView>
+<MudGrid>
+    <MudItem xs="12" md="6">
+        @foreach (var message in Messages)
+        {
+            <MudCard Class="mb-3">
+                <MudCardHeader>
+                    <CardHeaderAvatar>
+                        <MudAvatar Class="bg-dark-pink">@message.CreatedBy[0]</MudAvatar>
+                    </CardHeaderAvatar>
+                    <CardHeaderContent>
+                        <MudText Typo="Typo.body1">@message.CreatedBy</MudText>
+                        <MudText Typo="Typo.body2">@message.CreatedAt.ToString()</MudText>
+                    </CardHeaderContent>
+                    @*                    <CardHeaderActions>
+                <MudIconButton Icon="@Icons.Material.Filled.Settings" Color="Color.Default" />
+                </CardHeaderActions>*@
+                </MudCardHeader>
+                @*<MudCardMedia Image="images/pilars.jpg" Height="250" />*@
+                
+                <MudCardContent>
+                    <MudText Typo="Typo.body2">@message.Text</MudText>
+                </MudCardContent>
+                @*                <MudCardActions>
+            <MudIconButton Icon="@Icons.Material.Filled.Favorite" Color="Color.Default" />
+            <MudIconButton Icon="@Icons.Material.Filled.Share" Color="Color.Default" />
+            </MudCardActions>*@
+            </MudCard>
+        }
+    </MudItem>
+    <MudItem xs="12" md="6">
+
+    </MudItem>
+</MudGrid>

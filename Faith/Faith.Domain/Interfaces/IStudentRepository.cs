@@ -2,7 +2,7 @@
 
 namespace Faith.Core.Interfaces;
 
-public interface IStudentRepository
+public interface IStudentRepository : IRepository<Student>
 {
     Task<Student?> GetByUserId(string userId);
 }

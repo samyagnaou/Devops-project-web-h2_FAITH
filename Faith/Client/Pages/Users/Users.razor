@@ -1,0 +1,52 @@
+﻿@page "/users"
+@using Faith.Shared.Constants
+@using Faith.Shared.Models
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components
+@inherits UsersBase
+@attribute [Authorize(Roles = Roles.Admin)]
+
+<PageTitle>Users</PageTitle>
+
+<MudTable Items="Users"
+          Hover="true"
+          Filter="new Func<UserDTO, bool>(Filter)"
+          Loading="IsLoading">
+    <ToolBarContent>
+        <MudFab StartIcon="@Icons.Filled.PersonAdd"
+                Color="Color.Primary"
+                Size="Size.Small"
+                Class="fab"
+                OnClick="CreateUser" />
+        <MudSpacer />
+        <MudTextField @bind-Value="SearchQuery"
+                      Placeholder="Search"
+                      Adornment="Adornment.Start"
+                      AdornmentIcon="@Icons.Material.Filled.Search"
+                      IconSize="Size.Small"
+                      Class="search-field mt-0" />
+    </ToolBarContent>
+    <HeaderContent>
+        <MudTh>Email Address</MudTh>
+        <MudTh>Role</MudTh>
+        <MudTh>Actions</MudTh>
+    </HeaderContent>
+    <RowTemplate>
+        <MudTd DataLabel="Email">@context.Email</MudTd>
+        <MudTd DataLabel="Role">@context.Role</MudTd>
+        <MudTd DataLabel="Actions">
+            @*<MudStack Row="true">*@
+            <MudTooltip Placement="Placement.Top" Text="Delete">
+                <MudIconButton Icon="@Icons.Filled.Delete"
+                               Color="Color.Error"
+                               Size="Size.Small"
+                               OnClick="(e) => DeleteUser(context)">
+                </MudIconButton>
+            </MudTooltip>
+            @*</MudStack>*@
+        </MudTd>
+    </RowTemplate>
+    <PagerContent>
+        <MudTablePager />
+    </PagerContent>
+</MudTable>

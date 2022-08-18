@@ -3,11 +3,16 @@ using System.Security.Claims;
 using System.Text;
 using Faith.Core.Interfaces;
 using Faith.Core.Models;
+using Faith.Core.Models.Roles;
+using Faith.Server.Filters;
 using Faith.Shared;
+using Faith.Shared.Models;
 using Faith.Shared.Models.Requests;
 using Faith.Shared.Models.Responses;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 
 namespace Faith.Server.Controllers
@@ -20,7 +25,6 @@ namespace Faith.Server.Controllers
         private readonly UserManager<IdentityUser> _userManager;
         private readonly IStudentService _studentService;
         private readonly IMentorService _mentorService;
-        private readonly IConfiguration _config;
         private readonly IConfigurationSection _jwtSettings;
 
         public AccountsController(IStudentService studentService, IMentorService mentorService, UserManager<IdentityUser> userManager, IConfiguration config)
@@ -28,8 +32,27 @@ namespace Faith.Server.Controllers
             _userManager = userManager;
             _studentService = studentService;
             _mentorService = mentorService;
-            _config = config;
-            _jwtSettings = _config.GetSection("JWTSettings");
+            _jwtSettings = config.GetSection("JWTSettings");
+        }
+
+        [HttpGet]
+        public async Task<IEnumerable<UserDTO>> GetAllUsers()
+        {
+            var users = await _userManager.Users.ToListAsync();
+            var userDtoList = new List<UserDTO>();
+
+            foreach (var user in users)
+            {
+                var roles = await _userManager.GetRolesAsync(user);
+                var userDto = new UserDTO
+                {
+                    Id = user.Id,
+                    Email = user.Email,
+                    Role = roles.FirstOrDefault() ?? string.Empty
+                };
+                userDtoList.Add(userDto);
+            }
+            return userDtoList;
         }
 
         [HttpPost("Login")]
@@ -40,7 +63,7 @@ namespace Faith.Server.Controllers
                 return Unauthorized(new UserLoginResponse { ErrorMessage = "Invalid Authentication" });
 
             var signingCredentials = GetSigningCredentials();
-            var claims = GetClaimsAsync(user);
+            var claims = await GetClaimsAsync(user);
             var tokenOptions = GenerateTokenOptions(signingCredentials, claims);
             var token = new JwtSecurityTokenHandler().WriteToken(tokenOptions);
 
@@ -78,10 +101,19 @@ namespace Faith.Server.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateUserWithRole([FromBody] CreateUserWithRole request)
+        [ValidateModel]
+        [Authorize(Roles = $"{Roles.Admin},{Roles.Mentor}")]
+        public async Task<IActionResult> CreateUserWithRole([FromBody] CreateUserWithRoleRequest request)
         {
-            if (request == null || !ModelState.IsValid)
-                return BadRequest();
+            if (User.IsInRole(Roles.Mentor) &&
+                !request.Role.Equals(Roles.Student, StringComparison.OrdinalIgnoreCase))
+            {
+                return UnprocessableEntity(new RegisterUserResponse
+                {
+                    IsSuccessfulRegistration = false,
+                    Errors = new List<string> { $"Mentor cannot create user with {request.Role}" }
+                });
+            }
 
             var (user, errors) = await CreateUserWithRole(request.Email, request.Password, request.Role);
             if (errors.Any())
@@ -93,7 +125,7 @@ namespace Faith.Server.Controllers
                 });
             }
 
-            var isMemberCreated = await CreateMember(user.Id, request.Role, request.MemberDetails);
+            var isMemberCreated = await CreateMember(user.Email, request.Role, request.Profile);
             if (!isMemberCreated)
             {
                 await _userManager.DeleteAsync(user);
@@ -115,33 +147,36 @@ namespace Faith.Server.Controllers
             var user = new IdentityUser { UserName = email, Email = email };
 
             var result = await _userManager.CreateAsync(user, password);
+            // herhaling van code terugdringen
             if (!result.Succeeded)
-            {
+
                 return (user, result.Errors.Select(e => e.Description));
-            }
+
             result = await _userManager.AddToRoleAsync(user, role);
-            if (!result.Succeeded)
-            {
-                return (user, result.Errors.Select(e => e.Description));
-            }
+
             return (user, result.Errors.Select(e => e.Description));
         }
 
         private async Task<bool> CreateMember(
             string userId,
             string role,
-            MemberDetails details)
+            MemberProfile profile)
         {
             bool isMemberCreated = true;
-            details.MemberId = userId;
+            Student? student = null;
+            profile.MemberId = userId;
 
             switch (role)
             {
                 case Roles.Student:
-                    isMemberCreated = await _studentService.CreateNewStudent(details);
+                    if (User.IsInRole(Roles.Mentor))
+                        isMemberCreated = await _studentService
+                            .CreateStudentAndAddToGroup(User!.Identity!.Name!, profile);
+                    else
+                        (isMemberCreated, student) = await _studentService.CreateNewStudent(profile);
                     break;
                 case Roles.Mentor:
-                    isMemberCreated = await _mentorService.CreateNewMentor(details);
+                    isMemberCreated = await _mentorService.CreateNewMentor(profile);
                     break;
             }
             return isMemberCreated;

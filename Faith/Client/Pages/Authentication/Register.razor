@@ -1,0 +1,87 @@
+﻿@page "/authentication/register"
+@using System.ComponentModel.DataAnnotations
+@using Faith.Client.Interfaces
+@using Faith.Shared.Models.Requests
+@using Microsoft.AspNetCore.Components
+@layout LoginLayout
+
+<MudText Typo="Typo.h4" GutterBottom="true">Sign Up</MudText>
+<MudText>Already have an account? <MudLink Href="/authentication/login">Sign In</MudLink></MudText>
+
+<MudForm @ref="_form">
+    <MudTextField T="string"
+                  Label="Email"
+                  Variant="Variant.Outlined"
+                  Class="my-4"
+                  Required="true"
+                  RequiredError="Email is required!"
+                  Validation="@(new EmailAddressAttribute() {ErrorMessage = "The email address is invalid"})"
+                  @bind-Value="_user.Email" />
+    <MudTextField T="string"
+                  Label="Password"
+                  Variant="Variant.Outlined"
+                  InputType="@_passwordInput"
+                  Adornment="Adornment.End"
+                  AdornmentIcon="@_passwordInputIcon"
+                  OnAdornmentClick="TogglePasswordVisibility"
+                  Class="mt-4"
+                  Required="true"
+                  RequiredError="Password is required!"
+                  @bind-Value="_user.Password" />
+    <MudButton Variant="Variant.Filled"
+               Color="Color.Primary"
+               Size="Size.Large"
+               FullWidth="true"
+               Class="mt-4"
+               OnClick="Submit">
+        Register
+    </MudButton>
+</MudForm>
+
+@code {
+    private MudForm _form = null!;
+    private RegisterUserRequest _user = new();
+    private bool _passwordVisibility;
+    private InputType _passwordInput = InputType.Password;
+    private string _passwordInputIcon = Icons.Material.Filled.VisibilityOff;
+
+    [Inject]
+    private IAuthenticationService _authService { get; set; } = null!;
+
+    [Inject]
+    private NavigationManager _navManager { get; set; } = null!;
+
+    private async Task Submit()
+    {
+        await _form.Validate();
+        if (_form.IsValid)
+        {
+            var result = await _authService.RegisterUser(_user);
+            if (!result.IsSuccessfulRegistration)
+            {
+                // show errors
+            }
+            else
+            {
+                await _authService.Login(new UserLoginRequest { Email = _user.Email, Password = _user.Password });
+                _navManager.NavigateTo("/");
+            }
+        }
+    }
+
+    private void TogglePasswordVisibility()
+    {
+        @if (_passwordVisibility)
+        {
+            _passwordVisibility = false;
+            _passwordInputIcon = Icons.Material.Filled.VisibilityOff;
+            _passwordInput = InputType.Password;
+        }
+        else
+        {
+            _passwordVisibility = true;
+            _passwordInputIcon = Icons.Material.Filled.Visibility;
+            _passwordInput = InputType.Text;
+        }
+    }
+}

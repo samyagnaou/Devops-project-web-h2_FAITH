@@ -13,4 +13,5 @@ public class Comment
 
     public int MentorId { get; set; }
     public Mentor Mentor { get; set; } = null!;
+    public DateTime CreatedAt { get; set; }
 }

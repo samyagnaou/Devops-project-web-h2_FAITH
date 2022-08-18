@@ -7,21 +7,37 @@ namespace Faith.Core.Services;
 public class StudentService : IStudentService
 {
     private readonly IRepository<Student> _studentRepository;
+    private readonly IMentorService _mentorService;
 
-    public StudentService(IRepository<Student> studentRepository)
+    public StudentService(IStudentRepository studentRepository, IMentorService mentorService)
     {
         _studentRepository = studentRepository;
+        _mentorService = mentorService;
     }
 
-    public async Task<bool> CreateNewStudent(MemberDetails memberDetails)
+    public async Task<IEnumerable<Student>> GetAllStudents()
+        => await _studentRepository.ListAllAsync();
+
+    public async Task<bool> CreateStudentAndAddToGroup(
+        string mentorUserId,
+        MemberProfile profile)
     {
-        var student = new Student(memberDetails);
+        var (isCreated, student) = await CreateNewStudent(profile);
+        if (!isCreated)
+            return false;
+        await _mentorService.AddStudentToGroup(mentorUserId, student!);
+        return true;
+    }
+
+    public async Task<(bool, Student?)> CreateNewStudent(MemberProfile profile)
+    {
+        var student = new Student(profile);
         try
         {
             await _studentRepository.AddAsync(student);
-            return true;
+            return (true, student);
         }
         catch (Exception) { }
-        return false;
+        return (false, null);
     }
 }

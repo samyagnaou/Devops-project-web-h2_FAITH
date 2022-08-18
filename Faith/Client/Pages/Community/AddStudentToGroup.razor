@@ -1,0 +1,65 @@
+﻿@using System.Text.RegularExpressions
+@using System.ComponentModel.DataAnnotations
+@using Faith.Core.Models.Roles
+
+
+<MudDialog ClassActions="ma-4">
+    <DialogContent>
+        <MudForm @ref="_form" Class="px-2">
+            <MudSelect T="string"
+                       @bind-Value="_studentUserId"
+                       Label="Student"
+                       AnchorOrigin="Origin.BottomCenter"
+                       Required="true">
+                @foreach(var student in _students!)
+                {
+                    if (!CurrentStudents.Any(s => s.Id == student.Id))
+                    {
+                        <MudSelectItem Value="@student.MemberId" />
+                    }
+                }
+            </MudSelect>
+        </MudForm>
+    </DialogContent>
+    <DialogActions>
+        <MudButton Color="Color.Secondary" Variant="Variant.Filled" Size="Size.Small" OnClick="Cancel">
+            Cancel
+        </MudButton>
+        <MudButton Color="Color.Primary" Variant="Variant.Filled" Size="Size.Small" OnClick="Submit">
+            Add
+        </MudButton>
+    </DialogActions>
+</MudDialog>
+
+@code {
+    private MudForm _form = null!;
+    private string _studentUserId = string.Empty;
+    private IEnumerable<Student>? _students = Enumerable.Empty<Student>();
+
+    [Parameter]
+    public IEnumerable<Student> CurrentStudents { get; set; } = null!;
+
+    [CascadingParameter]
+    private MudDialogInstance _mudDialog { get; set; } = null!;
+
+    [Inject]
+    private HttpClient _httpClient { get; set; } = null!;
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        _students = await _httpClient
+            .GetFromJsonAsync<IEnumerable<Student>>("/students");
+    }
+
+    private async Task Submit()
+    {
+        await _form.Validate();
+        if (_form.IsValid)
+        {
+            _mudDialog.Close(DialogResult.Ok(_studentUserId));
+        }
+    }
+
+    private void Cancel() => _mudDialog.Cancel();
+}

@@ -1,0 +1,67 @@
+﻿@page "/community"
+@inherits CommunityBase
+@attribute [Authorize(Roles = Roles.Mentor)]
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components
+@using Faith.Core.Models.Roles
+@using Faith.Shared.Constants
+
+<PageTitle>Community</PageTitle>
+
+<MudTable Items="StudentGroup"
+          Hover="true"
+          Filter="new Func<Student, bool>(Filter)"
+          Loading="IsLoading">
+    <ToolBarContent>
+        <MudTooltip Text="Add New Student">
+            <MudFab StartIcon="@Icons.Filled.PersonAdd"
+                    Color="Color.Primary"
+                    Size="Size.Small"
+                    Class="fab"
+                    OnClick="CreateNewStudent" />
+        </MudTooltip>
+        <MudTooltip Text="Add Existing Student">
+            <MudFab StartIcon="@Icons.Filled.PersonSearch"
+                    Color="Color.Primary"
+                    Size="Size.Small"
+                    Class="fab ml-3"
+                    OnClick="AddStudentToGroup" />
+        </MudTooltip>
+        <MudSpacer />
+        <MudTextField @bind-Value="SearchQuery"
+                      Placeholder="Search"
+                      Adornment="Adornment.Start"
+                      AdornmentIcon="@Icons.Material.Filled.Search"
+                      IconSize="Size.Small"
+                      Class="search-field mt-0" />
+    </ToolBarContent>
+    <HeaderContent>
+        <MudTh>First Name</MudTh>
+        <MudTh>Last Name</MudTh>
+        <MudTh>Email Address</MudTh>
+        <MudTh>Birth Date</MudTh>
+        <MudTh>Actions</MudTh>
+    </HeaderContent>
+    <RowTemplate>
+        <MudTd DataLabel="First Name">@context.FirstName</MudTd>
+        <MudTd DataLabel="Last Name">@context.LastName</MudTd>
+        <MudTd DataLabel="Email">@context.MemberId</MudTd>
+        <MudTd DataLabel="Birth Date">
+            @(context.BirthDate.HasValue ? context.BirthDate.Value.ToShortDateString() : "")
+        </MudTd>
+        <MudTd DataLabel="Actions">
+            <MudStack Row="true">
+                <MudTooltip Placement="Placement.Top" Text="Remove From Group">
+                    <MudIconButton Icon="@Icons.Filled.RemoveCircle"
+                                   Color="Color.Error"
+                                   Size="Size.Small"
+                                   OnClick="(e) => RemoveStudentFromGroup(context.MemberId)">
+                    </MudIconButton>
+                </MudTooltip>
+            </MudStack>
+        </MudTd>
+    </RowTemplate>
+    <PagerContent>
+        <MudTablePager />
+    </PagerContent>
+</MudTable>

@@ -1,6 +1,6 @@
 ﻿namespace Faith.Core.Models.Roles;
 
-public class Mentor : MemberDetails
+public class Mentor : MemberProfile
 {
     public int Id { get; set; }
 
@@ -8,12 +8,12 @@ public class Mentor : MemberDetails
 
     public Mentor() { }
 
-    public Mentor(MemberDetails memberDetails)
+    public Mentor(MemberProfile profile)
     {
-        FirstName = memberDetails.FirstName;
-        LastName = memberDetails.LastName;
-        Gender = memberDetails.Gender;
-        BirthDate = memberDetails.BirthDate;
-        Gender = memberDetails.Gender;
+        FirstName = profile.FirstName;
+        LastName = profile.LastName;
+        Gender = profile.Gender;
+        BirthDate = profile.BirthDate;
+        Gender = profile.Gender;
     }
 }

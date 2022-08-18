@@ -1,0 +1,17 @@
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Persistence\obj\Debug\net6.0\Faith.Infrastructure.csproj.AssemblyReference.cache
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Persistence\obj\Debug\net6.0\Faith.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Persistence\obj\Debug\net6.0\Faith.Infrastructure.AssemblyInfoInputs.cache
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Persistence\obj\Debug\net6.0\Faith.Infrastructure.AssemblyInfo.cs
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Persistence\obj\Debug\net6.0\Faith.Infrastructure.csproj.CoreCompileInputs.cache
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Persistence\bin\Debug\net6.0\Faith.Infrastructure.deps.json
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Persistence\bin\Debug\net6.0\Faith.Infrastructure.dll
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Persistence\bin\Debug\net6.0\Faith.Infrastructure.pdb
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Persistence\bin\Debug\net6.0\Faith.Core.dll
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Persistence\bin\Debug\net6.0\Faith.Core.pdb
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Persistence\obj\Debug\net6.0\Faith.Infrastructure.csproj.CopyComplete
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Persistence\obj\Debug\net6.0\Faith.Infrastructure.dll
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Persistence\obj\Debug\net6.0\refint\Faith.Infrastructure.dll
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Persistence\obj\Debug\net6.0\Faith.Infrastructure.pdb
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Persistence\obj\Debug\net6.0\ref\Faith.Infrastructure.dll
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Persistence\bin\Debug\net6.0\Faith.Infrastructure.runtimeconfig.json
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Faith.Persistence\obj\Debug\net6.0\Faith.Infrastructure.genruntimeconfig.cache

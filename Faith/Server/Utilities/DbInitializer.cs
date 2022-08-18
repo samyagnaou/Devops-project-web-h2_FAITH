@@ -1,5 +1,7 @@
-﻿using Faith.Shared;
+﻿using Faith.Infrastructure.Data;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Roles = Faith.Shared.Roles;
 
 namespace Faith.Server.Utilities;
 
@@ -8,13 +10,19 @@ public static class DbInitializer
     private const string Email = "admin@admin.com";
     private const string Password = "Password11!";
 
-    public static async Task SeedAdminUser(IServiceProvider serviceProvider)
+    public static async Task Seed(IServiceProvider serviceProvider)
     {
         using (var scope = serviceProvider.CreateScope())
         {
             var services = scope.ServiceProvider;
+            var dbContext = services.GetRequiredService<FaithDbContext>();
             var userManager = services.GetRequiredService<UserManager<IdentityUser>>();
-            var admin = await userManager.FindByEmailAsync("admin@admin.com");
+            var rolManager = services.GetRequiredService<RoleManager<IdentityRole>>();
+            //var admin = await userManager.FindByEmailAsync("admin@admin.com");
+
+            await dbContext.Database.MigrateAsync();
+
+            var admin = await  userManager.FindByNameAsync(Email);
             if (admin == null)
             {
                 admin = new IdentityUser { UserName = Email, Email = Email };

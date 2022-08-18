@@ -1,5 +1,13 @@
-﻿<MudNavMenu>
-    <MudNavLink Href="" Match="NavLinkMatch.All" Icon="@Icons.Material.Filled.Home">Home</MudNavLink>
-    <MudNavLink Href="tijdlijn" Match="NavLinkMatch.Prefix" Icon="@Icons.Filled.Campaign">Tijdlijn</MudNavLink>
-    <MudNavLink Href="leefgroep" Match="NavLinkMatch.Prefix" Icon="@Icons.Filled.People">Leefgroep</MudNavLink>
+﻿@using Faith.Shared.Constants
+
+<MudNavMenu>
+    <AuthorizeView Roles="@($"{Roles.Mentor},{Roles.Student}")">
+        <MudNavLink Href="timeline" Match="NavLinkMatch.Prefix" Icon="@Icons.Filled.Timeline">Timeline</MudNavLink>
+    </AuthorizeView>
+    <AuthorizeView Roles="@Roles.Mentor">
+        <MudNavLink Href="community" Match="NavLinkMatch.Prefix" Icon="@Icons.Filled.Groups">Community</MudNavLink>
+    </AuthorizeView>
+    <AuthorizeView Roles="@Roles.Admin">
+        <MudNavLink Href="users" Match="NavLinkMatch.Prefix" Icon="@Icons.Filled.SupervisedUserCircle">Users</MudNavLink>
+    </AuthorizeView>
 </MudNavMenu>

@@ -1,0 +1,93 @@
+﻿@using System.Text.RegularExpressions
+@using System.ComponentModel.DataAnnotations
+@using Faith.Core.Models
+@using Faith.Shared.Constants
+@using Faith.Shared.Models.Requests
+@using Microsoft.AspNetCore.Components
+
+
+<MudDialog ClassActions="ma-4">
+    <DialogContent>
+        <MudForm @ref="_form" Class="px-2">
+            <MudStack Row="true">
+                <MudTextField T="string"
+                              Label="Email"
+                              Required="true"
+                              RequiredError="Email is required!"
+                              Validation="@(new EmailAddressAttribute() {ErrorMessage = "The email address is invalid"})"
+                              @bind-Value="_newUser.Email" />
+                <MudTextField T="string"
+                              Label="Password"
+                              InputType="InputType.Password"
+                              Required="true"
+                              RequiredError="Password is required!"
+                              @bind-Value="_newUser.Password" />
+            </MudStack>
+            <MudStack Row="true">
+                <MudTextField T="string"
+                              Label="First Name"
+                              @bind-Value="_newUser.Profile.FirstName" />
+                <MudTextField T="string"
+                              Label="Last Name"
+                              @bind-Value="_newUser.Profile.LastName" />
+            </MudStack>
+            <div class="d-flex justify-end">
+                <MudRadioGroup T="Gender?" @bind-SelectedOption="_newUser.Profile.Gender" Class="mt-2">
+                    <MudRadio Option="(Gender?)Gender.Male" Color="Color.Primary">@Gender.Male</MudRadio>
+                    <MudRadio Option="(Gender?)Gender.Female" Color="Color.Secondary">@Gender.Female</MudRadio>
+                </MudRadioGroup>
+            </div>
+            <MudStack Row="true">
+                <MudDatePicker Label="Birth Date"
+                               @bind-Date="_newUser.Profile.BirthDate"
+                               DisableToolbar="true" />
+                <AuthorizeView Roles="@Roles.Admin">
+                    <MudSelect T="string"
+                               Label="Role"
+                               MultiSelection="false"
+                               AnchorOrigin="Origin.BottomCenter"
+                               Required="true"
+                               RequiredError="Role is required!"
+                               @bind-Value="_newUser.Role">
+                        <MudSelectItem Value="@Roles.Admin" />
+                        <MudSelectItem Value="@Roles.Mentor" />
+                        <MudSelectItem Value="@Roles.Student" />
+                    </MudSelect>
+                </AuthorizeView>
+            </MudStack>
+        </MudForm>
+    </DialogContent>
+    <DialogActions>
+        <MudButton Color="Color.Secondary" Variant="Variant.Filled" Size="Size.Small" OnClick="Cancel">
+            Cancel
+        </MudButton>
+        <MudButton Color="Color.Primary" Variant="Variant.Filled" Size="Size.Small" OnClick="Submit">
+            Submit
+        </MudButton>
+    </DialogActions>
+</MudDialog>
+
+@code {
+    private MudForm _form = null!;
+    private CreateUserWithRoleRequest _newUser = new CreateUserWithRoleRequest
+        {
+            Profile = new MemberProfile { Gender = Gender.Male }
+        };
+
+    [CascadingParameter]
+    private MudDialogInstance _mudDialog { get; set; } = null!;
+
+    private async Task Submit()
+    {
+        if (string.IsNullOrWhiteSpace(_newUser.Role))
+            _newUser.Role = Roles.Student;
+
+        await _form.Validate();
+        if (_form.IsValid)
+        {
+            _mudDialog.Close(DialogResult.Ok(_newUser));
+        }
+    }
+
+    private void Cancel() => _mudDialog.Cancel();
+}

@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using System.Text.Json.Serialization;
 using Faith.Core.Interfaces;
 using Faith.Core.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -20,7 +21,7 @@ StaticWebAssetsLoader.UseStaticWebAssets(builder.Environment, builder.Configurat
 // Add services to the container.
 builder.Services.AddDbContext<FaithDbContext>(options =>
 {
-    options.UseMySql(builder.Configuration.GetConnectionString("HostedDevDBConnection"), MySqlServerVersion.LatestSupportedServerVersion,
+    options.UseMySql(connectionString, MySqlServerVersion.LatestSupportedServerVersion,
         sqlOptions =>
         {
             sqlOptions.EnableRetryOnFailure(
@@ -67,6 +68,7 @@ builder.Services.AddAuthentication(opt =>
 
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped<IStudentRepository, StudentRepository>();
+builder.Services.AddScoped<IMentorRepository, MentorRepository>();
 
 builder.Services.AddScoped<IStudentService, StudentService>();
 builder.Services.AddScoped<IMessageService, MessageService>();
@@ -76,7 +78,9 @@ builder.Services.AddScoped<IMentorService, MentorService>();
 
 
 
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews().AddJsonOptions(options =>
+    options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
+
 builder.Services.AddRazorPages();
 
 
@@ -109,12 +113,14 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.MapRazorPages();
 app.MapControllers();
 app.MapFallbackToFile("index.html");
 
 //feed db
-await DbInitializer.SeedAdminUser(builder.Services.BuildServiceProvider());
+await DbInitializer.Seed(builder.Services.BuildServiceProvider());
 
 app.Run();

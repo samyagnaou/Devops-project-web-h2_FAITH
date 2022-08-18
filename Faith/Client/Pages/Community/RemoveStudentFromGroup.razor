@@ -1,0 +1,28 @@
+﻿<MudDialog ClassActions="ma-2">
+    <TitleContent>
+        <MudText Typo="Typo.h6">
+            <MudIcon Icon="@Icons.Filled.RemoveCircle" Class="mr-3 mb-n1" />
+            Remove student from group
+        </MudText>
+    </TitleContent>
+    <DialogContent>
+        <MudText>
+            Are you sure you want to remove this student?
+        </MudText>
+    </DialogContent>
+    <DialogActions>
+        <MudButton Color="Color.Transparent" Variant="Variant.Filled" Size="Size.Small" OnClick="Cancel">
+            Cancel
+        </MudButton>
+        <MudButton Color="Color.Error" Variant="Variant.Filled" Size="Size.Small" OnClick="Submit">
+            Remove
+        </MudButton>
+    </DialogActions>
+</MudDialog>
+@code {
+    [CascadingParameter]
+    private MudDialogInstance _mudDialog { get; set; } = null!;
+
+    private void Submit() => _mudDialog.Close(DialogResult.Ok(true));
+    private void Cancel() => _mudDialog.Cancel();
+}
