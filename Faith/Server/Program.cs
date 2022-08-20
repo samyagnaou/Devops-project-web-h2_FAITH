@@ -1,25 +1,24 @@
-﻿using System.Text;
-using System.Text.Json.Serialization;
+﻿using Faith.Infrastructure.Data;
+using Faith.Infrastructure.Data.Repositories;
 using Faith.Core.Interfaces;
 using Faith.Core.Services;
+using Faith.Server.Utilities;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using Microsoft.AspNetCore.Hosting.StaticWebAssets;
-using Faith.Infrastructure.Data;
-using Faith.Infrastructure.Data.Repositories;
-using Faith.Server.Utilities;
+using System.Text;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 var config = builder.Configuration;
 var connectionString = config.GetConnectionString("Default");
 var jwtSettings = config.GetSection("JWTSettings");
 
-StaticWebAssetsLoader.UseStaticWebAssets(builder.Environment, builder.Configuration);
+
 
 // Add services to the container.
-builder.Services.AddDbContext<FaithDbContext>(options =>
+builder.Services.AddDbContext<FaithPlatformContext>(options =>
 {
     options.UseMySql(connectionString, MySqlServerVersion.LatestSupportedServerVersion,
         sqlOptions =>
@@ -36,7 +35,7 @@ builder.Services.AddDbContext<FaithDbContext>(options =>
 
 // adding authentication/authorisation instead of auth0, dont see any value to add third party tools but will add it when there is time left
 builder.Services.AddIdentity<IdentityUser, IdentityRole>()
-    .AddEntityFrameworkStores<FaithDbContext>();
+    .AddEntityFrameworkStores<FaithPlatformContext>();
 
 
 builder.Services.AddAuthentication(opt =>
@@ -59,20 +58,16 @@ builder.Services.AddAuthentication(opt =>
 });
 
 
-//builder.Services.AddSwaggerGen(c =>
-//{
-//    c.CustomSchemaIds(x => x.FullName);
-//    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Api", Version = "v1" });
-//
-//});
 
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped<IStudentRepository, StudentRepository>();
 builder.Services.AddScoped<IMentorRepository, MentorRepository>();
+builder.Services.AddScoped<IMessageRepository, MessageRepository>();
 
 builder.Services.AddScoped<IStudentService, StudentService>();
 builder.Services.AddScoped<IMessageService, MessageService>();
 builder.Services.AddScoped<IMentorService, MentorService>();
+builder.Services.AddScoped<ICommentService, CommentService>();
 
 
 
@@ -83,12 +78,15 @@ builder.Services.AddControllersWithViews().AddJsonOptions(options =>
 
 builder.Services.AddRazorPages();
 
-
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
 
 
 
 var app = builder.Build();
+app.UseSwagger();
+app.UseSwaggerUI();
 
 //app.UseSwagger();
 //app.UseSwaggerUI(c =>
@@ -98,6 +96,8 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseWebAssemblyDebugging();
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
 else
 {

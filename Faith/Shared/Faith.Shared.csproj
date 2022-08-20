@@ -6,22 +6,12 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 	</PropertyGroup>
 
+
 	<ItemGroup>
 		<SupportedPlatform Include="browser" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="FluentValidation" Version="11.1.1" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Models\Responses\" />
-	  <Folder Include="Models\Requests\" />
-	  <Folder Include="Extensions\" />
-	  <Folder Include="Constants\" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <ProjectReference Include="..\Faith.Domain\Faith.Core.csproj" />
+		<ProjectReference Include="..\Faith.Domain\Faith.Core.csproj" />
 	</ItemGroup>
 </Project>

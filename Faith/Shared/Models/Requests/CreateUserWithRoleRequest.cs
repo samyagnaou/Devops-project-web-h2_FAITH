@@ -1,12 +1,14 @@
-﻿using System.ComponentModel.DataAnnotations;
-using Faith.Core.Models;
+﻿using Faith.Core.Models;
+using Faith.Shared.Constants;
+using System.ComponentModel.DataAnnotations;
 
-namespace Faith.Shared.Models.Requests;
-
-public class CreateUserWithRoleRequest : RegisterUserRequest
+namespace Faith.Shared.Models.Requests
 {
-    public MemberProfile Profile { get; set; } = new();
+    public class CreateUserWithRoleRequest : RegisterUserRequest
+    {
+        public MemberProfile Profile { get; set; } = new();
 
-    [RegularExpression($"{Roles.Admin}|{Roles.Mentor}|{Roles.Student}")]
-    public string Role { get; set; } = null!;
+        [RegularExpression($"{Roles.Admin}|{Roles.Mentor}|{Roles.Student}")]
+        public string Role { get; set; } = null!;
+    }
 }

@@ -1,6 +1,6 @@
 ﻿using Faith.Core.Interfaces;
-using Faith.Core.Models.Roles;
-using Faith.Shared;
+using Faith.Core.Models;
+using Faith.Shared.Constants;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -22,15 +22,11 @@ namespace Faith.Server.Controllers
 
         [HttpGet]
         public async Task<IEnumerable<Student>> GetAll()
-        {
-            return await _studentService.GetAllStudents();
-        }
+            => await _studentService.GetAllStudents();
 
         [HttpGet("group")]
         public async Task<IEnumerable<Student>> GetStudentsInMentorGroup()
-        {
-            return await _mentorService.GetStudentsInGroup(User!.Identity!.Name!);
-        }
+            => await _mentorService.GetStudentsInGroup(User!.Identity!.Name!);
 
         [HttpPost("add-to-group")]
         public async Task<IActionResult> AddStudentToGroup([FromBody] string studentUserId)
@@ -51,6 +47,5 @@ namespace Faith.Server.Controllers
                 return UnprocessableEntity();
             return Ok();
         }
-
     }
 }

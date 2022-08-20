@@ -1,10 +1,9 @@
 ﻿@page "/users"
-@using Faith.Shared.Constants
-@using Faith.Shared.Models
-@using Microsoft.AspNetCore.Authorization
-@using Microsoft.AspNetCore.Components
 @inherits UsersBase
 @attribute [Authorize(Roles = Roles.Admin)]
+@using Faith.Shared.Constants
+@using Faith.Core.Models
+@using Faith.Shared.Models
 
 <PageTitle>Users</PageTitle>
 

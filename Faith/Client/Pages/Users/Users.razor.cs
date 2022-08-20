@@ -1,12 +1,11 @@
-﻿using Microsoft.AspNetCore.Components;
-using MudBlazor;
-using System.Net.Http.Json;
-using System.Text.Json;
-using Faith.Client.Pages.Users;
-using Faith.Shared.Constants;
+﻿using Faith.Shared.Constants;
 using Faith.Shared.Models;
 using Faith.Shared.Models.Requests;
 using Faith.Shared.Models.Responses;
+using Microsoft.AspNetCore.Components;
+using MudBlazor;
+using System.Net.Http.Json;
+using System.Text.Json;
 
 namespace Faith.Client.Pages.Users
 {

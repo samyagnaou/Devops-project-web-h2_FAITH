@@ -1,8 +1,9 @@
-﻿using Faith.Core.Models.Roles;
+﻿using Faith.Core.Models;
 
-namespace Faith.Core.Interfaces;
-
-public interface IStudentRepository : IRepository<Student>
+namespace Faith.Core.Interfaces
 {
-    Task<Student?> GetByUserId(string userId);
+    public interface IStudentRepository : IRepository<Student>
+    {
+        Task<Student?> GetByUserId(string userId);
+    }
 }

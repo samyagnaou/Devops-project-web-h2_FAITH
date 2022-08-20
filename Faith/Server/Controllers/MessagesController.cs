@@ -1,48 +1,46 @@
 ﻿using Faith.Core.Interfaces;
-using Faith.Shared;
-using Faith.Shared.Models;
+using Faith.Core.Models;
+using Faith.Shared.Constants;
 using Faith.Shared.Models.Requests;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Faith.Server.Controllers
 {
-    [Authorize(Roles = Roles.Student)]
     public class MessagesController : ApiControllerBase
     {
-        private readonly UserManager<IdentityUser> _userManager;
         private readonly IMessageService _messageService;
 
         public MessagesController(
-            IMessageService messageService,
-            UserManager<IdentityUser> userManager)
+            IMessageService messageService)
         {
             _messageService = messageService;
-            _userManager = userManager;
         }
 
         [HttpGet]
-        public async Task<IEnumerable<MessageDTO>> GetAllMessages()
+        [Authorize(Roles = Roles.Student)]
+        public async Task<IEnumerable<Message>> GetAllMessagesForAStudent()
         {
             var messages = await _messageService
-                .GetAllMessages(User.Identity!.Name!);
-            return messages.Select(m =>
-                new MessageDTO
-                {
-                    Text = m.Text,
-                    ImageUrl = m.ImageUrl,
-                    CreatedBy = User!.Identity!.Name!,
-                    CreatedAt = m.CreatedAt
-                });
+                .GetAllMessagesForAStudent(User.Identity!.Name!);
+            return messages;
         }
 
+        [HttpGet("group")]
+        [Authorize(Roles = Roles.Mentor)]
+        public async Task<IEnumerable<Message>> GetAllMessagesInMentorGroup()
+        {
+            var messages = await _messageService
+                .GetAllMessagesInMentorGroup(User.Identity!.Name!);
+            return messages;
+        }
 
         [HttpPost]
-        public async Task<IActionResult> PostMessage(PostMessageRequest request)
+        [Authorize(Roles = Roles.Student)]
+        public async Task<IActionResult> PostAMessage(PostMessageRequest request)
         {
             var isMessageSent = await _messageService
-                .PostMessage(User.Identity!.Name!, request.Text, request.ImageUrl);
+                .PostAMessage(User.Identity!.Name!, request.Text, request.ImageUrl);
             if (isMessageSent)
                 return Ok();
             return UnprocessableEntity();

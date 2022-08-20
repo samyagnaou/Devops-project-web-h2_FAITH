@@ -1,47 +1,47 @@
-﻿using System.Net.Http.Headers;
-using System.Security.Claims;
+﻿using Blazored.LocalStorage;
 using Faith.Client.Utilities;
-using Intersoft.Crosslight.Mobile;
 using Microsoft.AspNetCore.Components.Authorization;
+using System.Net.Http.Headers;
+using System.Security.Claims;
 
-namespace Faith.Client.AuthProviders;
-
-public class AuthStateProvider : AuthenticationStateProvider
+namespace Faith.Client.AuthProviders
 {
-
-    private readonly HttpClient _httpClient;
-    private readonly ILocalStorageService _localStorage;
-    private readonly AuthenticationState _anonymous;
-
-    public AuthStateProvider(HttpClient httpClient, ILocalStorageService localStorage)
+    public class AuthStateProvider : AuthenticationStateProvider
     {
-        _httpClient = httpClient;
-        _localStorage = localStorage;
-        _anonymous = new AuthenticationState(new ClaimsPrincipal(new ClaimsIdentity()));
-    }
+        private readonly HttpClient _httpClient;
+        private readonly ILocalStorageService _localStorage;
+        private readonly AuthenticationState _anonymous;
 
-    public override async Task<AuthenticationState> GetAuthenticationStateAsync()
-    {
-        var token = await _localStorage.GetItemAsync<string>("authToken");
-        if (string.IsNullOrWhiteSpace(token))
-            return _anonymous;
+        public AuthStateProvider(HttpClient httpClient, ILocalStorageService localStorage)
+        {
+            _httpClient = httpClient;
+            _localStorage = localStorage;
+            _anonymous = new AuthenticationState(new ClaimsPrincipal(new ClaimsIdentity()));
+        }
 
-        _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", token);
+        public override async Task<AuthenticationState> GetAuthenticationStateAsync()
+        {
+            var token = await _localStorage.GetItemAsync<string>("authToken");
+            if (string.IsNullOrWhiteSpace(token))
+                return _anonymous;
 
-        return new AuthenticationState(new ClaimsPrincipal(new ClaimsIdentity(JwtParser.ParseClaimsFromJwt(token), "jwtAuthType")));
-    }
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", token);
 
-    public void NotifyUserAuthentication(string token)
-    {
-        var authenticatedUser = new ClaimsPrincipal(
-            new ClaimsIdentity(JwtParser.ParseClaimsFromJwt(token), "jwtAuthType"));
-        var authState = Task.FromResult(new AuthenticationState(authenticatedUser));
-        NotifyAuthenticationStateChanged(authState);
-    }
+            return new AuthenticationState(new ClaimsPrincipal(new ClaimsIdentity(JwtParser.ParseClaimsFromJwt(token), "jwtAuthType")));
+        }
 
-    public void NotifyUserLogout()
-    {
-        var authState = Task.FromResult(_anonymous);
-        NotifyAuthenticationStateChanged(authState);
+        public void NotifyUserAuthentication(string token)
+        {
+            var authenticatedUser = new ClaimsPrincipal(
+                new ClaimsIdentity(JwtParser.ParseClaimsFromJwt(token), "jwtAuthType"));
+            var authState = Task.FromResult(new AuthenticationState(authenticatedUser));
+            NotifyAuthenticationStateChanged(authState);
+        }
+
+        public void NotifyUserLogout()
+        {
+            var authState = Task.FromResult(_anonymous);
+            NotifyAuthenticationStateChanged(authState);
+        }
     }
 }

@@ -1,0 +1,43 @@
+﻿@using Faith.Core.Models
+
+<MudCard Class="mb-3">
+    <MudCardHeader>
+        <CardHeaderAvatar>
+            <MudAvatar Class="bg-dark-pink">@Message.Student.MemberId[0]</MudAvatar>
+        </CardHeaderAvatar>
+        <CardHeaderContent>
+            <MudText Typo="Typo.body1">@Message.Student.MemberId</MudText>
+            <MudText Typo="Typo.body2">@Message.CreatedAt.ToString()</MudText>
+        </CardHeaderContent>
+        @*                    <CardHeaderActions>
+        <MudIconButton Icon="@Icons.Material.Filled.Settings" Color="Color.Default" />
+        </CardHeaderActions>*@
+    </MudCardHeader>
+    @*<MudCardMedia Image="images/pilars.jpg" Height="250" />*@
+
+    <MudCardContent>
+        <MudText Typo="Typo.body2">@Message.Text</MudText>
+    </MudCardContent>
+    <MudCardActions>
+        <MudTooltip Text="Add comment">
+            <MudIconButton Icon="@Icons.Filled.AddComment"
+                           Size="Size.Small"
+                           Color="Color.Default"
+                           OnClick="() => ShowMenu(Message)"/>
+        </MudTooltip>
+
+        <div class="d-flex justify-end flex-grow-1">
+            <MudChip OnClick="() => ShowMenu(Message)" Class="align-self-center">
+                @($"{Message.Comments.Count} Comments")
+            </MudChip>
+        </div>
+    </MudCardActions>
+</MudCard>
+
+@code {
+    [Parameter]
+    public Message Message { get; set; } = null!;
+
+    [Parameter]
+    public Action<Message> ShowMenu { get; set; } = null!;
+}

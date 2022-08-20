@@ -46,18 +46,7 @@ D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Server
 D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Server\obj\Debug\net6.0\Faith.Server.pdb
 D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Server\obj\Debug\net6.0\Faith.Server.genruntimeconfig.cache
 D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Server\obj\Debug\net6.0\ref\Faith.Server.dll
-D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Server\bin\Debug\net6.0\Ardalis.GuardClauses.dll
-D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Server\bin\Debug\net6.0\Auth0.AuthenticationApi.dll
-D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Server\bin\Debug\net6.0\Auth0.Core.dll
-D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Server\bin\Debug\net6.0\Auth0.ManagementApi.dll
-D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Server\bin\Debug\net6.0\Auth0Net.DependencyInjection.dll
-D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Server\bin\Debug\net6.0\FluentValidation.dll
-D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Server\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
-D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Server\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
 D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Server\bin\Debug\net6.0\Humanizer.dll
-D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Server\bin\Debug\net6.0\JetBrains.Annotations.dll
-D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Server\bin\Debug\net6.0\LazyCache.dll
-D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Server\bin\Debug\net6.0\LazyCache.AspNetCore.dll
 D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Server\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Server\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
 D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Server\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
@@ -70,7 +59,6 @@ D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Server
 D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Server\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Server\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
 D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Server\bin\Debug\net6.0\MySqlConnector.dll
-D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Server\bin\Debug\net6.0\Newtonsoft.Json.dll
 D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Server\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll
 D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Server\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
 D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Server\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
@@ -83,3 +71,10 @@ D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Server
 D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Server\bin\Debug\net6.0\Faith.Infrastructure.pdb
 D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Server\bin\Debug\net6.0\Faith.Core.pdb
 D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Server\obj\Debug\net6.0\Faith.Server.MvcApplicationPartsAssemblyInfo.cs
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Server\bin\Debug\net6.0\Blazored.LocalStorage.dll
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Server\bin\Debug\net6.0\Microsoft.AspNetCore.Components.Authorization.dll
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Server\bin\Debug\net6.0\Microsoft.AspNetCore.Components.WebAssembly.Authentication.dll
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Server\bin\Debug\net6.0\Microsoft.OpenApi.dll
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Server\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Server\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Users\samyratchet\Documents\GitRepos\Devops-project-web-h2_FAITH\Faith\Server\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll

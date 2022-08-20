@@ -1,48 +1,46 @@
 ﻿using Faith.Core.Interfaces;
 using Faith.Core.Models;
 
-namespace Faith.Core.Services;
-
-public class MessageService : IMessageService
+namespace Faith.Core.Services
 {
-    private readonly IRepository<Message> _messageRepository;
-    private readonly IStudentRepository _studentRepository;
-
-    public MessageService(IRepository<Message> messageRepository,
-        IStudentRepository studentRepository)
+    public class MessageService : IMessageService
     {
-        _messageRepository = messageRepository;
-        _studentRepository = studentRepository;
-    }
+        private readonly IMessageRepository _messageRepository;
+        private readonly IStudentRepository _studentRepository;
 
-    public async Task<IEnumerable<Message>> GetAllMessages(string userId)
-    {
-        var student = await _studentRepository.GetByUserId(userId);
-        if (student != null)
+        public MessageService(
+            IMessageRepository messageRepository,
+            IStudentRepository studentRepository)
         {
-            return student.Messages;
+            _messageRepository = messageRepository;
+            _studentRepository = studentRepository;
         }
-        return Enumerable.Empty<Message>();
-    }
 
-    public async Task<bool> PostMessage(string userId, string text, string? imageUrl)
-    {
-        var student = await _studentRepository.GetByUserId(userId);
-        if (student == null)
-            return false;
+        public async Task<IEnumerable<Message>> GetAllMessagesForAStudent(string studentUserId)
+            => await _messageRepository.GetAllMessagesForAStudent(studentUserId);
 
-        var message = new Message
+        public async Task<IEnumerable<Message>> GetAllMessagesInMentorGroup(string mentorUserId)
+            => await _messageRepository.GetAllMessagesInMentorGroup(mentorUserId);
+
+        public async Task<bool> PostAMessage(string userId, string text, string? imageUrl)
         {
-            Text = text,
-            ImageUrl = imageUrl,
-            StudentId = student.Id,
-            CreatedAt = DateTime.Now,
-        };
-        try
-        {
-            await _messageRepository.AddAsync(message);
-            return true;
+            var student = await _studentRepository.GetByUserId(userId);
+            if (student == null)
+                return false;
+
+            var message = new Message
+            {
+                Text = text,
+                ImageUrl = imageUrl,
+                StudentId = student.Id,
+                CreatedAt = DateTime.Now,
+            };
+            try
+            {
+                await _messageRepository.AddAsync(message);
+                return true;
+            }
+            catch (Exception) { return false; }
         }
-        catch (Exception) { return false; }
     }
 }

@@ -1,14 +1,14 @@
 ﻿using Faith.Core.Interfaces;
-using Faith.Core.Models.Roles;
+using Faith.Core.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Faith.Infrastructure.Data.Repositories;
-
-public class StudentRepository : Repository<Student>, IStudentRepository
+namespace Faith.Infrastructure.Data.Repositories
 {
-    public StudentRepository(FaithDbContext context) : base(context) { }
+    public class StudentRepository : Repository<Student>, IStudentRepository
+    {
+        public StudentRepository(FaithPlatformContext context) : base(context) { }
 
-    public async Task<Student?> GetByUserId(string userId)
-        => await _dbSet.Include(s => s.Messages)
-            .FirstOrDefaultAsync(s => s.MemberId.Equals(userId));
+        public async Task<Student?> GetByUserId(string userId)
+            => await _dbSet.FirstOrDefaultAsync(s => s.MemberId.Equals(userId));
+    }
 }

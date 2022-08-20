@@ -1,11 +1,12 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using Faith.Client.Interfaces;
+using Faith.Client.Theme;
+using Faith.Shared.Extensions;
+using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Web;
+using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
 using MudBlazor;
 using System.Security.Claims;
-using Faith.Client.Interfaces;
-using Faith.Shared.Extensions;
-using PowerArgs.Games;
 
 namespace Faith.Client.Shared
 {

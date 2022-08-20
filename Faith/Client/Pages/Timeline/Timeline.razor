@@ -1,0 +1,79 @@
+﻿@page "/timeline"
+@inherits TimelineBase
+@using Faith.Shared.Constants;
+
+<PageTitle>Timeline</PageTitle>
+
+<AuthorizeView Roles="@Roles.Student">
+    <MudStack Row="true" Class="mb-4">
+        <MudTextField @bind-Value="PostMessageRequest.Text"
+                      Label="Write a message... "
+                      Variant="Variant.Text"
+                      Margin="Margin.Dense" />
+        <MudButton Variant="Variant.Filled"
+                   EndIcon="@Icons.Material.Filled.Send"
+                   Color="Color.Primary"
+                   Size="Size.Small"
+                   Class="align-self-end"
+                   Style="height: 37px"
+                   OnClick="PostMessage">
+            Send
+        </MudButton>
+    </MudStack>
+</AuthorizeView>
+<MudGrid>
+    <MudItem xs="12" md="6">
+        @foreach (var message in Messages!)
+        {
+            <Post Message="@message" ShowMenu="ShowMenu" />
+        }
+    </MudItem>
+    <MudItem xs="12" md="6">
+        @if (SelectedMessage != null)
+        {
+            <MudCard>
+                <Post Message="@SelectedMessage" ShowMenu="ShowMenu" />
+                <MudDivider DividerType="DividerType.Middle" Class="my-1" />
+                <div class="d-flex flex-grow-1">
+                    <MudForm @onkeydown="(e) => OnKeyDown(e, SelectedMessage.Id)"
+                         Class="px-5 d-flex flex-grow-1 gap-4">
+                        <MudTextField @bind-Value="AddCommentRequest.Text"
+                                  Label="Write a comment... "
+                                  Variant="Variant.Text"
+                                  Margin="Margin.Dense"
+                                  Required="true"
+                                  Class="mb-5" />
+                        <div class="align-self-center">
+                            <MudFab Color="Color.Primary"
+                                Size="Size.Small"
+                                StartIcon="@Icons.Material.Filled.Send"
+                                Class="fab"
+                                OnClick="() => AddComment(SelectedMessage.Id)" />
+                        </div>
+                    </MudForm>
+                </div>
+                @if (SelectedMessage.Comments.Any())
+                {
+                    <MudCard>
+                        <MudDivider DividerType="DividerType.Middle" Class="my-2" />
+                        <div class="d-flex flex-column flex-grow-1 gap-2">
+                            @foreach (var comment in SelectedMessage.Comments)
+                            {
+                                var firstName = comment.Student != null ?
+                                comment.Student.MemberId : comment.Mentor!.MemberId;
+                                <MudStack Row="true" AlignItems="AlignItems.Center" Class="pl-4">
+                                    <MudAvatar Class="bg-dark-pink">@firstName[0]</MudAvatar>
+                                    <MudText>@firstName</MudText>
+                                </MudStack>
+                                <div class="pl-6 pb-3">
+                                    <MudText Typo="Typo.h5">@comment.Text</MudText>
+                                </div>
+                                <MudDivider DividerType="DividerType.Middle" Class="my-2" />
+                            }
+                        </div>
+                    </MudCard>
+                }
+            </MudCard>
+        }
+    </MudItem>
+</MudGrid>

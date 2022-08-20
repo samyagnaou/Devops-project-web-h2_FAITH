@@ -1,11 +1,6 @@
-﻿using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text;
-using Faith.Core.Interfaces;
+﻿using Faith.Core.Interfaces;
 using Faith.Core.Models;
-using Faith.Core.Models.Roles;
 using Faith.Server.Filters;
-using Faith.Shared;
 using Faith.Shared.Models;
 using Faith.Shared.Models.Requests;
 using Faith.Shared.Models.Responses;
@@ -14,12 +9,13 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
+using Faith.Shared.Constants;
 
 namespace Faith.Server.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")]
-    //[Authorize(Roles = "Administrator")]
     public class AccountsController : ApiControllerBase
     {
         private readonly UserManager<IdentityUser> _userManager;
@@ -27,7 +23,11 @@ namespace Faith.Server.Controllers
         private readonly IMentorService _mentorService;
         private readonly IConfigurationSection _jwtSettings;
 
-        public AccountsController(IStudentService studentService, IMentorService mentorService, UserManager<IdentityUser> userManager, IConfiguration config)
+        public AccountsController(
+            IStudentService studentService,
+            IMentorService mentorService,
+            UserManager<IdentityUser> userManager,
+            IConfiguration config)
         {
             _userManager = userManager;
             _studentService = studentService;
@@ -63,7 +63,7 @@ namespace Faith.Server.Controllers
                 return Unauthorized(new UserLoginResponse { ErrorMessage = "Invalid Authentication" });
 
             var signingCredentials = GetSigningCredentials();
-            var claims = await GetClaimsAsync(user);
+            var claims = await GetClaims(user);
             var tokenOptions = GenerateTokenOptions(signingCredentials, claims);
             var token = new JwtSecurityTokenHandler().WriteToken(tokenOptions);
 
@@ -71,11 +71,9 @@ namespace Faith.Server.Controllers
         }
 
         [HttpPost("Register")]
+        [ValidateModel]
         public async Task<IActionResult> RegisterStudent([FromBody] RegisterUserRequest request)
         {
-            if (request == null || !ModelState.IsValid)
-                return BadRequest();
-
             var (user, errors) = await CreateUserWithRole(request.Email, request.Password, Roles.Student);
             if (errors.Any())
             {
@@ -147,36 +145,32 @@ namespace Faith.Server.Controllers
             var user = new IdentityUser { UserName = email, Email = email };
 
             var result = await _userManager.CreateAsync(user, password);
-            // herhaling van code terugdringen
             if (!result.Succeeded)
-
                 return (user, result.Errors.Select(e => e.Description));
-
             result = await _userManager.AddToRoleAsync(user, role);
-
             return (user, result.Errors.Select(e => e.Description));
         }
 
         private async Task<bool> CreateMember(
             string userId,
             string role,
-            MemberProfile profile)
+            MemberProfile details)
         {
             bool isMemberCreated = true;
             Student? student = null;
-            profile.MemberId = userId;
+            details.MemberId = userId;
 
             switch (role)
             {
                 case Roles.Student:
                     if (User.IsInRole(Roles.Mentor))
                         isMemberCreated = await _studentService
-                            .CreateStudentAndAddToGroup(User!.Identity!.Name!, profile);
+                            .CreateStudentAndAddToGroup(User!.Identity!.Name!, details);
                     else
-                        (isMemberCreated, student) = await _studentService.CreateNewStudent(profile);
+                        (isMemberCreated, student) = await _studentService.CreateNewStudent(details);
                     break;
                 case Roles.Mentor:
-                    isMemberCreated = await _mentorService.CreateNewMentor(profile);
+                    isMemberCreated = await _mentorService.CreateNewMentor(details);
                     break;
             }
             return isMemberCreated;
@@ -190,8 +184,7 @@ namespace Faith.Server.Controllers
             return new SigningCredentials(secret, SecurityAlgorithms.HmacSha256);
         }
 
-
-        private async Task<List<Claim>> GetClaimsAsync(IdentityUser user)
+        private async Task<List<Claim>> GetClaims(IdentityUser user)
         {
             var claims = new List<Claim>
             {

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
 
 	<PropertyGroup>
 		<TargetFramework>net6.0</TargetFramework>
@@ -19,12 +19,6 @@
 		<ProjectReference Include="..\Shared\Faith.Shared.csproj" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <Folder Include="AuthProviders\" />
-	  <Folder Include="Interfaces\" />
-	  <Folder Include="Services\" />
-	  <Folder Include="Utilities\" />
-	  <Folder Include="Theme\" />
-	</ItemGroup>
+
 
 </Project>

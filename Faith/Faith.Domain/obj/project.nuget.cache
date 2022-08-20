@@ -1,11 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kqKqzdmvvFgFvPBEDYpC8HRH0Q6k5NVfmjr49qMV9sQk6KgnB9klJPgUWSUQFbF7I5l2LfUdF+XoUghrec7wSw==",
+  "dgSpecHash": "G9010xPAtYlGYDPPR3OYOWAJ+XXDVYxlo3tpA3AyRCJ/GMWwx9NXYRm0ZZsk7lDbfl1+W0YV4cHLhtB5FW0Umg==",
   "success": true,
   "projectFilePath": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Faith.Domain\\Faith.Core.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\samyratchet\\.nuget\\packages\\ardalis.guardclauses\\4.0.1\\ardalis.guardclauses.4.0.1.nupkg.sha512",
-    "C:\\Users\\samyratchet\\.nuget\\packages\\jetbrains.annotations\\2021.3.0\\jetbrains.annotations.2021.3.0.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }

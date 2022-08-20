@@ -1,13 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "J+hzSdoHGsVOE8hwBt7AMqiurE4ocBW4hQcbYjhCOo/VNBysnNUFzbep96JGHJkFFN4R0V1NuGxQDLSZRCZ4Cw==",
+  "dgSpecHash": "TmrHDeQzqCbEEClx5bdHHJRsd82/Wn7XL6tlPWHfoLGT+3WHzwweRPUjwUh7ofrqXcsBzOMXpyz+EQLWz6j6xg==",
   "success": true,
   "projectFilePath": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Client\\Faith.Client.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\samyratchet\\.nuget\\packages\\ardalis.guardclauses\\4.0.1\\ardalis.guardclauses.4.0.1.nupkg.sha512",
     "C:\\Users\\samyratchet\\.nuget\\packages\\blazored.localstorage\\4.2.0\\blazored.localstorage.4.2.0.nupkg.sha512",
-    "C:\\Users\\samyratchet\\.nuget\\packages\\fluentvalidation\\11.1.1\\fluentvalidation.11.1.1.nupkg.sha512",
-    "C:\\Users\\samyratchet\\.nuget\\packages\\jetbrains.annotations\\2021.3.0\\jetbrains.annotations.2021.3.0.nupkg.sha512",
     "C:\\Users\\samyratchet\\.nuget\\packages\\microsoft.aspnetcore.authorization\\6.0.7\\microsoft.aspnetcore.authorization.6.0.7.nupkg.sha512",
     "C:\\Users\\samyratchet\\.nuget\\packages\\microsoft.aspnetcore.components\\6.0.7\\microsoft.aspnetcore.components.6.0.7.nupkg.sha512",
     "C:\\Users\\samyratchet\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\6.0.7\\microsoft.aspnetcore.components.analyzers.6.0.7.nupkg.sha512",

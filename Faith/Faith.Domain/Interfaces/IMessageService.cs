@@ -1,9 +1,11 @@
 ﻿using Faith.Core.Models;
 
-namespace Faith.Core.Interfaces;
-
-public interface IMessageService
+namespace Faith.Core.Interfaces
 {
-    Task<IEnumerable<Message>> GetAllMessages(string userId);
-    Task<bool> PostMessage(string userId, string text, string? imageUrl);
+    public interface IMessageService
+    {
+        Task<IEnumerable<Message>> GetAllMessagesForAStudent(string userId);
+        Task<IEnumerable<Message>> GetAllMessagesInMentorGroup(string mentorUserId);
+        Task<bool> PostAMessage(string userId, string text, string? imageUrl);
+    }
 }

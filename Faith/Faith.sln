@@ -5,19 +5,29 @@ VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Faith.Client", "Client\Faith.Client.csproj", "{EC508606-89CD-4F04-B2EB-1191E70575AA}"
 	ProjectSection(ProjectDependencies) = postProject
+		{C8998EFD-8D1B-40A5-A1FE-DE1D8E656851} = {C8998EFD-8D1B-40A5-A1FE-DE1D8E656851}
 		{DE5D5673-98D0-4264-B248-DDB5C9BDD65C} = {DE5D5673-98D0-4264-B248-DDB5C9BDD65C}
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Faith.Server", "Server\Faith.Server.csproj", "{B5655D9A-91FB-4E25-9301-4EF50BCFF482}"
 	ProjectSection(ProjectDependencies) = postProject
+		{32CC3118-2C6F-480E-BAB2-1180AD794AD3} = {32CC3118-2C6F-480E-BAB2-1180AD794AD3}
+		{C8998EFD-8D1B-40A5-A1FE-DE1D8E656851} = {C8998EFD-8D1B-40A5-A1FE-DE1D8E656851}
 		{DE5D5673-98D0-4264-B248-DDB5C9BDD65C} = {DE5D5673-98D0-4264-B248-DDB5C9BDD65C}
+		{EC508606-89CD-4F04-B2EB-1191E70575AA} = {EC508606-89CD-4F04-B2EB-1191E70575AA}
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Faith.Shared", "Shared\Faith.Shared.csproj", "{C8998EFD-8D1B-40A5-A1FE-DE1D8E656851}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DE5D5673-98D0-4264-B248-DDB5C9BDD65C} = {DE5D5673-98D0-4264-B248-DDB5C9BDD65C}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Faith.Core", "Faith.Domain\Faith.Core.csproj", "{DE5D5673-98D0-4264-B248-DDB5C9BDD65C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Faith.Infrastructure", "Faith.Persistence\Faith.Infrastructure.csproj", "{32CC3118-2C6F-480E-BAB2-1180AD794AD3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DE5D5673-98D0-4264-B248-DDB5C9BDD65C} = {DE5D5673-98D0-4264-B248-DDB5C9BDD65C}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
