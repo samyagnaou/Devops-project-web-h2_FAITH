@@ -23,8 +23,7 @@ namespace Faith.Infrastructure.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.ApplyConfiguration(new RoleConfiguration());
+           // modelBuilder.ApplyConfiguration(new RoleConfiguration());
         }
     }
 }
-

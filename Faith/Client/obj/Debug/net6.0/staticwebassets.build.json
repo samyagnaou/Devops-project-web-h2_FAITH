@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "gzFLruKwipnDantAmBCbqKAwJsIduMC3cXzU4j6VXq4=",
+  "Hash": "4GbVC7+SQOGMf1FbLVU+/wwK4vBnW1d/Z1yeV07/N5A=",
   "Source": "Faith.Client",
   "BasePath": "/",
   "Mode": "Root",
@@ -272,6 +272,23 @@
       "OriginalItemSpec": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Shared\\bin\\Debug\\net6.0\\Faith.Shared.pdb"
     },
     {
+      "Identity": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\icudt.dat",
+      "SourceId": "Faith.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/icudt.dat",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "native",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\samyratchet\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.8\\runtimes\\browser-wasm\\native\\icudt.dat"
+    },
+    {
       "Identity": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\icudt_CJK.dat",
       "SourceId": "Faith.Client",
       "SourceType": "Computed",
@@ -321,23 +338,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\samyratchet\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.8\\runtimes\\browser-wasm\\native\\icudt_no_CJK.dat"
-    },
-    {
-      "Identity": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\icudt.dat",
-      "SourceId": "Faith.Client",
-      "SourceType": "Computed",
-      "ContentRoot": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/icudt.dat",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "BlazorWebAssemblyResource",
-      "AssetTraitValue": "native",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\samyratchet\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.8\\runtimes\\browser-wasm\\native\\icudt.dat"
     },
     {
       "Identity": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Authorization.dll",

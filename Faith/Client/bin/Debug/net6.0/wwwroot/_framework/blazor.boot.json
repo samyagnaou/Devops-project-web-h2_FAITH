@@ -201,17 +201,17 @@
       "mscorlib.dll": "sha256-TYLzIm125RbnX9+RAPqJnwZhd6CnQpJcrjiMpJfZ720=",
       "netstandard.dll": "sha256-HhuK9zDkd1N7hODAEiNJ11VF8T54IgrM6hZfLHmHdqM=",
       "System.Private.CoreLib.dll": "sha256-dXaTqyg1PnXPiSwywpic1PVrd7P8Vb5tN0i0\/urdt3E=",
-      "Faith.Core.dll": "sha256-0Scr\/e7eM0jxOxZsbu7ICRW0jOqYZCWpxrdH0x36Rbc=",
-      "Faith.Shared.dll": "sha256-hgw2S50CBllP2ahd1xMLygmAs7pgwi+bldHoRDzw7yY=",
-      "Faith.Client.dll": "sha256-kjpETC3RNdnjom+UySsR5kBZKQ6naiZ9cAw11SsgUHI="
+      "Faith.Core.dll": "sha256-kqQfGUBu\/z+w3fhF2YWAUCPNBnVlU5+4yjqIACOXSzQ=",
+      "Faith.Shared.dll": "sha256-Yk6eGuAJKJvu6wc\/SKwQj3Bs+g+IUTgyw9MBxnkKBKM=",
+      "Faith.Client.dll": "sha256-8QoSnpviiwqlvbiM4PZx\/H02qaITwCn0StH3G1Fyq+A="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
-      "Faith.Shared.pdb": "sha256-AzBhHnSzu2VHYB4G3FVj9Xo0zB4qOCpHL71YJNJvT4A=",
-      "Faith.Core.pdb": "sha256-YsgVcnuZc88+wx8wG1EmNrNMO8gfSjS\/x3A3e+J+De8=",
-      "Faith.Client.pdb": "sha256-sa+HS8\/UF8tL+00vPpw\/kxfLIBwpJiB11Bs+\/VDu0Dk="
+      "Faith.Shared.pdb": "sha256-MlXv+0SkXjCaAxbe24+Nldz4LbquOIcFSPaEO15arss=",
+      "Faith.Core.pdb": "sha256-fp7Pzpyx24y7MZTm2wu2\/4IOJ7O4lns54b6Aiwa\/FIk=",
+      "Faith.Client.pdb": "sha256-7TN\/mrRYWUxU8h89JZX82gGri9T8WMso2nmYeIcQ6pg="
     },
     "runtime": {
       "dotnet.6.0.8.izx9hsl33w.js": "sha256-WT60vnXnQtCNURE40qo+XSL1o4iYFvABy0NVaFhm7MI=",

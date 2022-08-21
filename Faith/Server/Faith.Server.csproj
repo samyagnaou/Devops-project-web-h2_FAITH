@@ -8,8 +8,8 @@
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.8" />
-		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="6.0.4" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.7">
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="6.0.8" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.8">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
@@ -20,10 +20,6 @@
 		<ProjectReference Include="..\Client\Faith.Client.csproj" />
 		<ProjectReference Include="..\Faith.Persistence\Faith.Infrastructure.csproj" />
 		<ProjectReference Include="..\Shared\Faith.Shared.csproj" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Migrations\" />
 	</ItemGroup>
 
 </Project>

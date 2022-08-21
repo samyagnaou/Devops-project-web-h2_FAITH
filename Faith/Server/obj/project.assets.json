@@ -150,7 +150,7 @@
           "buildMultiTargeting/Microsoft.AspNetCore.Components.WebAssembly.Authentication.props": {}
         }
       },
-      "Microsoft.AspNetCore.Components.WebAssembly.Server/6.0.4": {
+      "Microsoft.AspNetCore.Components.WebAssembly.Server/6.0.8": {
         "type": "package",
         "compile": {
           "lib/net6.0/Microsoft.AspNetCore.Components.WebAssembly.Server.dll": {}
@@ -256,11 +256,11 @@
           "lib/netstandard2.0/_._": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Design/6.0.7": {
+      "Microsoft.EntityFrameworkCore.Design/6.0.8": {
         "type": "package",
         "dependencies": {
           "Humanizer.Core": "2.8.26",
-          "Microsoft.EntityFrameworkCore.Relational": "6.0.7"
+          "Microsoft.EntityFrameworkCore.Relational": "6.0.8"
         },
         "compile": {
           "lib/net6.0/_._": {}
@@ -1105,10 +1105,10 @@
         "staticwebassets/AuthenticationService.js"
       ]
     },
-    "Microsoft.AspNetCore.Components.WebAssembly.Server/6.0.4": {
-      "sha512": "zlYQtZS4wrD0x03Xy3f0ZEuqRP2arHNJHYFgfUBGua0PtpnrI6EdoReORQm9GmyWISHa1MbEuE4Yurlwad5KNA==",
+    "Microsoft.AspNetCore.Components.WebAssembly.Server/6.0.8": {
+      "sha512": "iXDGkOa/lxkniqAzYXFK5AjD2xeTWvQ+9bmJHNDL3aj+e9hUpboH9gwBwy0Z4YPdsNF4MZVGfTQnZx7Vi/AH8g==",
       "type": "package",
-      "path": "microsoft.aspnetcore.components.webassembly.server/6.0.4",
+      "path": "microsoft.aspnetcore.components.webassembly.server/6.0.8",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
@@ -1118,7 +1118,7 @@
         "build/Microsoft.AspNetCore.Components.WebAssembly.Server.targets",
         "lib/net6.0/Microsoft.AspNetCore.Components.WebAssembly.Server.dll",
         "lib/net6.0/Microsoft.AspNetCore.Components.WebAssembly.Server.xml",
-        "microsoft.aspnetcore.components.webassembly.server.6.0.4.nupkg.sha512",
+        "microsoft.aspnetcore.components.webassembly.server.6.0.8.nupkg.sha512",
         "microsoft.aspnetcore.components.webassembly.server.nuspec",
         "tools/BlazorDebugProxy/BrowserDebugHost.dll",
         "tools/BlazorDebugProxy/BrowserDebugHost.runtimeconfig.json",
@@ -1311,10 +1311,10 @@
         "microsoft.entityframeworkcore.analyzers.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Design/6.0.7": {
-      "sha512": "chshSATT8ugtqCiYryx5qDefK99o2ojyMCOIlQgetDhe83czL9Sp7s1a5MkvUyN5D4F0Vv8gXU77Wv+cplUJuw==",
+    "Microsoft.EntityFrameworkCore.Design/6.0.8": {
+      "sha512": "yv3RGUVWP+UVmCrQiD0XGB7U1JandH+MeBrlLWMBvue01cJhFSBrzvtHr6jTNJaMTmoKiNIeK7uff6HesrfU4g==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.design/6.0.7",
+      "path": "microsoft.entityframeworkcore.design/6.0.8",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1322,7 +1322,7 @@
         "build/net6.0/Microsoft.EntityFrameworkCore.Design.props",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Design.dll",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Design.xml",
-        "microsoft.entityframeworkcore.design.6.0.7.nupkg.sha512",
+        "microsoft.entityframeworkcore.design.6.0.8.nupkg.sha512",
         "microsoft.entityframeworkcore.design.nuspec"
       ]
     },
@@ -2576,8 +2576,8 @@
       "Faith.Infrastructure >= 1.0.0",
       "Faith.Shared >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 6.0.8",
-      "Microsoft.AspNetCore.Components.WebAssembly.Server >= 6.0.4",
-      "Microsoft.EntityFrameworkCore.Design >= 6.0.7",
+      "Microsoft.AspNetCore.Components.WebAssembly.Server >= 6.0.8",
+      "Microsoft.EntityFrameworkCore.Design >= 6.0.8",
       "Swashbuckle.AspNetCore >= 6.4.0"
     ]
   },
@@ -2636,13 +2636,13 @@
           },
           "Microsoft.AspNetCore.Components.WebAssembly.Server": {
             "target": "Package",
-            "version": "[6.0.4, )"
+            "version": "[6.0.8, )"
           },
           "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
             "target": "Package",
-            "version": "[6.0.7, )"
+            "version": "[6.0.8, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",

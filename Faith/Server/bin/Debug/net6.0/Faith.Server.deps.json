@@ -12,8 +12,8 @@
           "Faith.Infrastructure": "1.0.0",
           "Faith.Shared": "1.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.8",
-          "Microsoft.AspNetCore.Components.WebAssembly.Server": "6.0.4",
-          "Microsoft.EntityFrameworkCore.Design": "6.0.7",
+          "Microsoft.AspNetCore.Components.WebAssembly.Server": "6.0.8",
+          "Microsoft.EntityFrameworkCore.Design": "6.0.8",
           "Swashbuckle.AspNetCore": "6.4.0"
         },
         "runtime": {
@@ -141,11 +141,11 @@
           }
         }
       },
-      "Microsoft.AspNetCore.Components.WebAssembly.Server/6.0.4": {
+      "Microsoft.AspNetCore.Components.WebAssembly.Server/6.0.8": {
         "runtime": {
           "lib/net6.0/Microsoft.AspNetCore.Components.WebAssembly.Server.dll": {
-            "assemblyVersion": "6.0.4.0",
-            "fileVersion": "6.0.422.17204"
+            "assemblyVersion": "6.0.8.0",
+            "fileVersion": "6.0.822.36316"
           }
         }
       },
@@ -215,15 +215,15 @@
         }
       },
       "Microsoft.EntityFrameworkCore.Analyzers/6.0.8": {},
-      "Microsoft.EntityFrameworkCore.Design/6.0.7": {
+      "Microsoft.EntityFrameworkCore.Design/6.0.8": {
         "dependencies": {
           "Humanizer.Core": "2.8.26",
           "Microsoft.EntityFrameworkCore.Relational": "6.0.8"
         },
         "runtime": {
           "lib/net6.0/Microsoft.EntityFrameworkCore.Design.dll": {
-            "assemblyVersion": "6.0.7.0",
-            "fileVersion": "6.0.722.31501"
+            "assemblyVersion": "6.0.8.0",
+            "fileVersion": "6.0.822.36205"
           }
         }
       },
@@ -695,12 +695,12 @@
       "path": "microsoft.aspnetcore.components.webassembly.authentication/6.0.7",
       "hashPath": "microsoft.aspnetcore.components.webassembly.authentication.6.0.7.nupkg.sha512"
     },
-    "Microsoft.AspNetCore.Components.WebAssembly.Server/6.0.4": {
+    "Microsoft.AspNetCore.Components.WebAssembly.Server/6.0.8": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-zlYQtZS4wrD0x03Xy3f0ZEuqRP2arHNJHYFgfUBGua0PtpnrI6EdoReORQm9GmyWISHa1MbEuE4Yurlwad5KNA==",
-      "path": "microsoft.aspnetcore.components.webassembly.server/6.0.4",
-      "hashPath": "microsoft.aspnetcore.components.webassembly.server.6.0.4.nupkg.sha512"
+      "sha512": "sha512-iXDGkOa/lxkniqAzYXFK5AjD2xeTWvQ+9bmJHNDL3aj+e9hUpboH9gwBwy0Z4YPdsNF4MZVGfTQnZx7Vi/AH8g==",
+      "path": "microsoft.aspnetcore.components.webassembly.server/6.0.8",
+      "hashPath": "microsoft.aspnetcore.components.webassembly.server.6.0.8.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Cryptography.Internal/6.0.8": {
       "type": "package",
@@ -758,12 +758,12 @@
       "path": "microsoft.entityframeworkcore.analyzers/6.0.8",
       "hashPath": "microsoft.entityframeworkcore.analyzers.6.0.8.nupkg.sha512"
     },
-    "Microsoft.EntityFrameworkCore.Design/6.0.7": {
+    "Microsoft.EntityFrameworkCore.Design/6.0.8": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-chshSATT8ugtqCiYryx5qDefK99o2ojyMCOIlQgetDhe83czL9Sp7s1a5MkvUyN5D4F0Vv8gXU77Wv+cplUJuw==",
-      "path": "microsoft.entityframeworkcore.design/6.0.7",
-      "hashPath": "microsoft.entityframeworkcore.design.6.0.7.nupkg.sha512"
+      "sha512": "sha512-yv3RGUVWP+UVmCrQiD0XGB7U1JandH+MeBrlLWMBvue01cJhFSBrzvtHr6jTNJaMTmoKiNIeK7uff6HesrfU4g==",
+      "path": "microsoft.entityframeworkcore.design/6.0.8",
+      "hashPath": "microsoft.entityframeworkcore.design.6.0.8.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore.Relational/6.0.8": {
       "type": "package",

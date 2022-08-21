@@ -6,6 +6,6 @@ namespace Faith.Core.Interfaces
     {
         Task<Message?> GetMessageById(int id);
         Task<IEnumerable<Message>> GetAllMessagesForAStudent(string studentUserId);
-        Task<IEnumerable<Message>> GetAllMessagesInMentorGroup(string mentorUserId);
+        Task<(IEnumerable<Message>, IEnumerable<Message>)> GetAllMessagesInMentorGroup(string mentorUserId);
     }
 }

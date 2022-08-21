@@ -15,28 +15,13 @@ var config = builder.Configuration;
 var connectionString = config.GetConnectionString("Default");
 var jwtSettings = config.GetSection("JWTSettings");
 
-
-
-// Add services to the container.
 builder.Services.AddDbContext<FaithPlatformContext>(options =>
 {
-    options.UseMySql(connectionString, MySqlServerVersion.LatestSupportedServerVersion,
-        sqlOptions =>
-        {
-            sqlOptions.EnableRetryOnFailure(
-                maxRetryCount: 10,
-                maxRetryDelay: TimeSpan.FromSeconds(30),
-                errorNumbersToAdd: null);
-        });
-    //Only for dev purpose
-    options.EnableDetailedErrors();
-    options.EnableSensitiveDataLogging();
+    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
 });
 
-// adding authentication/authorisation instead of auth0, dont see any value to add third party tools but will add it when there is time left
 builder.Services.AddIdentity<IdentityUser, IdentityRole>()
-    .AddEntityFrameworkStores<FaithPlatformContext>();
-
+  .AddEntityFrameworkStores<FaithPlatformContext>();
 
 builder.Services.AddAuthentication(opt =>
 {
@@ -58,40 +43,29 @@ builder.Services.AddAuthentication(opt =>
 });
 
 
-
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped<IStudentRepository, StudentRepository>();
 builder.Services.AddScoped<IMentorRepository, MentorRepository>();
 builder.Services.AddScoped<IMessageRepository, MessageRepository>();
+builder.Services.AddScoped<ICommentRepository, CommentRepository>();
 
 builder.Services.AddScoped<IStudentService, StudentService>();
-builder.Services.AddScoped<IMessageService, MessageService>();
 builder.Services.AddScoped<IMentorService, MentorService>();
+builder.Services.AddScoped<IMessageService, MessageService>();
 builder.Services.AddScoped<ICommentService, CommentService>();
 
-
-
-
-
-builder.Services.AddControllersWithViews().AddJsonOptions(options =>
-    options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
+builder.Services
+    .AddControllersWithViews()
+    .AddJsonOptions(options =>
+        options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 
 builder.Services.AddRazorPages();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-
-
-
 var app = builder.Build();
-app.UseSwagger();
-app.UseSwaggerUI();
 
-//app.UseSwagger();
-//app.UseSwaggerUI(c =>
-//    c.SwaggerEndpoint("/swagger/v1/swagger.json","Faith API V1")
-//    );
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -120,7 +94,6 @@ app.MapRazorPages();
 app.MapControllers();
 app.MapFallbackToFile("index.html");
 
-//feed db
 await DbInitializer.Seed(builder.Services.BuildServiceProvider());
 
 app.Run();

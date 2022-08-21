@@ -17,5 +17,6 @@
         public int Id { get; set; }
 
         public ICollection<Student> Students { get; set; } = null!;
+        public ICollection<Message> ArchivedMessages { get; set; } = null!;
     }
 }

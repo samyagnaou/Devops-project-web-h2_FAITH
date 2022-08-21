@@ -1,4 +1,5 @@
 ﻿@using Faith.Core.Models
+@using Faith.Shared.Constants
 
 <MudCard Class="mb-3">
     <MudCardHeader>
@@ -9,9 +10,17 @@
             <MudText Typo="Typo.body1">@Message.Student.MemberId</MudText>
             <MudText Typo="Typo.body2">@Message.CreatedAt.ToString()</MudText>
         </CardHeaderContent>
-        @*                    <CardHeaderActions>
-        <MudIconButton Icon="@Icons.Material.Filled.Settings" Color="Color.Default" />
-        </CardHeaderActions>*@
+        <CardHeaderActions>
+            @if (!string.IsNullOrWhiteSpace(UserRole) && UserRole.Equals(Roles.Mentor))
+            {
+                <MudTooltip Text="Archive message">
+                    <MudIconButton Icon="@Icons.Filled.Archive"
+                               Color="Color.Default"
+                               OnClick="() => ArchiveAMessage(Message.Id)" />
+                </MudTooltip>
+            }
+
+        </CardHeaderActions>
     </MudCardHeader>
     @*<MudCardMedia Image="images/pilars.jpg" Height="250" />*@
 
@@ -23,7 +32,7 @@
             <MudIconButton Icon="@Icons.Filled.AddComment"
                            Size="Size.Small"
                            Color="Color.Default"
-                           OnClick="() => ShowMenu(Message)"/>
+                           OnClick="() => ShowMenu(Message)" />
         </MudTooltip>
 
         <div class="d-flex justify-end flex-grow-1">
@@ -39,5 +48,11 @@
     public Message Message { get; set; } = null!;
 
     [Parameter]
+    public string? UserRole { get; set; }
+
+    [Parameter]
     public Action<Message> ShowMenu { get; set; } = null!;
+
+    [Parameter]
+    public Func<int, Task> ArchiveAMessage { get; set; } = null!;
 }

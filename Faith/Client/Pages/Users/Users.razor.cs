@@ -79,6 +79,7 @@ namespace Faith.Client.Pages.Users
 
         protected async Task DeleteUser(UserDTO user)
         {
+
         }
     }
 }

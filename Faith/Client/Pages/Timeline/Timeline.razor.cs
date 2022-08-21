@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Web;
 using System.Net.Http.Json;
 using System.Security.Claims;
+using Faith.Shared.Models.Responses;
+using MudBlazor;
 
 namespace Faith.Client.Pages.Timeline
 {
@@ -18,13 +20,23 @@ namespace Faith.Client.Pages.Timeline
 
         protected Message? SelectedMessage { get; set; }
         protected IEnumerable<Message>? Messages { get; set; } = Enumerable.Empty<Message>();
+        protected IEnumerable<Message>? ArchivedMessages { get; set; } = Enumerable.Empty<Message>();
 
+        public bool ShowArchivedMessages { get; set; }
+        protected string UserId { get; set; } = null!;
+        protected string Role { get; set; } = null!;
 
         [Inject]
         private AuthenticationStateProvider _authStateProvider { get; set; } = null!;
 
         [Inject]
         private HttpClient _httpClient { get; set; } = null!;
+
+        [Inject]
+        private IDialogService _dialogService { get; set; } = null!;
+
+        [Inject]
+        private ISnackbar _snackbar { get; set; } = null!;
 
         protected override async Task OnInitializedAsync()
         {
@@ -43,21 +55,28 @@ namespace Faith.Client.Pages.Timeline
         {
             var authState = await _authStateProvider.GetAuthenticationStateAsync();
             var user = authState.User;
-            var role = user.GetClaimValue(ClaimTypes.Role);
-            if (role!.Equals(Roles.Mentor))
+            UserId = user.GetClaimValue(ClaimTypes.Name)!;
+            Role = user.GetClaimValue(ClaimTypes.Role)!;
+            if (Role!.Equals(Roles.Mentor))
                 await LoadMessagesInMentorGroup();
             else
                 await LoadMessagesForAStudent();
 
             if (SelectedMessage != null)
-                SelectedMessage = Messages?.FirstOrDefault(m => m.Id == SelectedMessage.Id);
+            {
+                var message = Messages?.FirstOrDefault(m => m.Id == SelectedMessage.Id);
+                if (message == null)
+                    message = ArchivedMessages?.FirstOrDefault(m => m.Id == SelectedMessage.Id);
+                SelectedMessage = message;
+            }
         }
 
         protected async Task LoadMessagesInMentorGroup()
         {
-            Messages = await _httpClient
-                .GetFromJsonAsync<IEnumerable<Message>>("/messages/group");
-
+            var response = await _httpClient
+                .GetFromJsonAsync<MentorMessagesResponse>("/messages/group");
+            ArchivedMessages = response!.ArchivedMessages;
+            Messages = response!.Messages;
         }
 
         protected async Task LoadMessagesForAStudent()
@@ -103,6 +122,65 @@ namespace Faith.Client.Pages.Timeline
                 AddCommentRequest = new();
                 StateHasChanged();
             }
+        }
+
+        protected async Task DeleteCommment(int commentId)
+        {
+            using var response = await _httpClient
+                .DeleteAsync($"/comments/{commentId}");
+            if (response.IsSuccessStatusCode)
+            {
+                await LoadMessages();
+                StateHasChanged();
+            }
+        }
+
+        protected async Task EditAComment(Comment comment)
+        {
+            var parameters = new DialogParameters();
+            parameters.Add("Text", comment.Text);
+            var result = await _dialogService.Show<EditComment>("Edit comment", parameters).Result;
+
+            if (!result.Cancelled)
+            {
+                var text = (string)result.Data;
+                using var response = await _httpClient
+                    .PutAsJsonAsync($"/comments/{comment.Id}", text);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    _snackbar.Add("The comment has been successfully updated!");
+                    await LoadMessages();
+                    StateHasChanged();
+                }
+                else
+                {
+                    _snackbar.Add(ResultMessages.Error, Severity.Error);
+                }
+            }
+        }
+
+        protected async Task ArchiveAMessage(int messageId)
+        {
+            using var response = await _httpClient
+                .PostAsJsonAsync($"/messages/archive", messageId);
+
+            if (response.IsSuccessStatusCode)
+            {
+                _snackbar.Add("The message has been archived!");
+                await LoadMessages();
+                StateHasChanged();
+            }
+            else
+            {
+                _snackbar.Add(ResultMessages.Error, Severity.Error);
+            }
+        }
+
+        protected void ToggleArchivedMessages()
+        {
+            ShowArchivedMessages = !ShowArchivedMessages;
+            SelectedMessage = null;
         }
     }
 }

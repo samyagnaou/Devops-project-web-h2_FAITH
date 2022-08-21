@@ -5,6 +5,7 @@
         public int Id { get; set; }
 
         public string Text { get; set; } = null!;
+        public DateTime CreatedAt { get; set; }
 
         public int MessageId { get; set; }
         public Message Message { get; set; } = null!;
@@ -15,7 +16,5 @@
         public int? StudentId { get; set; }
         public Student? Student { get; set; }
 
-        public DateTime CreatedAt { get; set; }
-
-    }
+	}
 }

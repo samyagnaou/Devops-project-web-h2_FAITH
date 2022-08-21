@@ -8,6 +8,8 @@ namespace Faith.Server.Utilities
     {
         private const string Email = "admin@admin.com";
         private const string Password = "Password11!";
+        private static string[] RolesArr
+            = new string[] { Roles.Admin, Roles.Mentor, Roles.Student };
 
         public static async Task Seed(IServiceProvider serviceProvider)
         {
@@ -17,8 +19,13 @@ namespace Faith.Server.Utilities
                 var dbContext = services.GetRequiredService<FaithPlatformContext>();
                 var userManager = services.GetRequiredService<UserManager<IdentityUser>>();
                 var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
-
                 await dbContext.Database.MigrateAsync();
+
+                foreach (var role in RolesArr)
+                {
+                    if (!await roleManager.RoleExistsAsync(role))
+                        await roleManager.CreateAsync(new IdentityRole { Name = role });
+                }
 
                 var admin = await userManager.FindByEmailAsync(Email);
                 if (admin == null)

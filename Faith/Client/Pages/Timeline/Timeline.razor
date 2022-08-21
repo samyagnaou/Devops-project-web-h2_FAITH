@@ -21,22 +21,53 @@
         </MudButton>
     </MudStack>
 </AuthorizeView>
+<AuthorizeView Roles="@Roles.Mentor">
+    <MudPaper Elevation="25" Class="mb-3">
+        <MudToolBar>
+            <MudSpacer />
+            <MudTooltip Text="Show archived messages">
+                <MudIconButton Icon="@Icons.Material.Outlined.Archive"
+                               OnClick="ToggleArchivedMessages" />
+            </MudTooltip>
+        </MudToolBar>
+    </MudPaper>
+</AuthorizeView>
 <MudGrid>
     <MudItem xs="12" md="6">
-        @foreach (var message in Messages!)
+        @if (ShowArchivedMessages)
         {
-            <Post Message="@message" ShowMenu="ShowMenu" />
+            @foreach (var message in ArchivedMessages!)
+            {
+                <Post Message="@message"
+              UserRole="@Role"
+              ShowMenu="ShowMenu"
+              ArchiveAMessage="ArchiveAMessage" />
+            }
+        }
+        else
+        {
+            @foreach (var message in Messages!)
+            {
+                <Post Message="@message"
+              UserRole="@Role"
+              ShowMenu="ShowMenu"
+              ArchiveAMessage="ArchiveAMessage" />
+            }
         }
     </MudItem>
     <MudItem xs="12" md="6">
         @if (SelectedMessage != null)
         {
-            <MudCard>
-                <Post Message="@SelectedMessage" ShowMenu="ShowMenu" />
-                <MudDivider DividerType="DividerType.Middle" Class="my-1" />
+            <MudPaper Class="gap-2">
+                <div class="">
+                    <Post Message="@SelectedMessage"
+                      UserRole="@Role"
+                      ShowMenu="ShowMenu"
+                      ArchiveAMessage="ArchiveAMessage" />
+                </div>
                 <div class="d-flex flex-grow-1">
                     <MudForm @onkeydown="(e) => OnKeyDown(e, SelectedMessage.Id)"
-                         Class="px-5 d-flex flex-grow-1 gap-4">
+                         Class="px-5 my-2 d-flex flex-grow-1 gap-4">
                         <MudTextField @bind-Value="AddCommentRequest.Text"
                                   Label="Write a comment... "
                                   Variant="Variant.Text"
@@ -54,26 +85,52 @@
                 </div>
                 @if (SelectedMessage.Comments.Any())
                 {
-                    <MudCard>
-                        <MudDivider DividerType="DividerType.Middle" Class="my-2" />
-                        <div class="d-flex flex-column flex-grow-1 gap-2">
-                            @foreach (var comment in SelectedMessage.Comments)
-                            {
-                                var firstName = comment.Student != null ?
-                                comment.Student.MemberId : comment.Mentor!.MemberId;
-                                <MudStack Row="true" AlignItems="AlignItems.Center" Class="pl-4">
-                                    <MudAvatar Class="bg-dark-pink">@firstName[0]</MudAvatar>
-                                    <MudText>@firstName</MudText>
-                                </MudStack>
-                                <div class="pl-6 pb-3">
-                                    <MudText Typo="Typo.h5">@comment.Text</MudText>
-                                </div>
-                                <MudDivider DividerType="DividerType.Middle" Class="my-2" />
-                            }
+                    @foreach (var comment in SelectedMessage.Comments)
+                    {
+                        var userId = comment.Student != null ?
+                        comment.Student.MemberId : comment.Mentor!.MemberId;
+                        var showActions = UserId == userId;
+                        <div class="px-4">
+                            <MudCard Class="rounded mt-2 border-double">
+                                <MudCardHeader>
+                                    <CardHeaderAvatar>
+                                        <MudAvatar Class="bg-dark-pink">@userId[0]</MudAvatar>
+                                    </CardHeaderAvatar>
+                                    <CardHeaderContent>
+                                        <MudText Typo="Typo.body1">@userId</MudText>
+                                        <MudText Typo="Typo.body2">@comment.CreatedAt.ToString()</MudText>
+                                    </CardHeaderContent>
+                                    <CardHeaderActions>
+                                        @if (showActions)
+                                        {
+                                            <MudTooltip Text="Edit comment">
+                                                <MudIconButton Icon="@Icons.Material.Filled.Edit"
+                                               Color="Color.Primary"
+                                               Size="Size.Small"
+                                               OnClick="() => EditAComment(comment)" />
+                                            </MudTooltip>
+                                            <MudTooltip Text="Delete comment">
+                                                <MudIconButton Icon="@Icons.Material.Filled.Delete"
+                                               Color="Color.Error"
+                                               Size="Size.Small"
+                                               OnClick="() => DeleteCommment(comment.Id)" />
+                                            </MudTooltip>
+                                        }
+                                    </CardHeaderActions>
+                                </MudCardHeader>
+                                <MudCardContent>
+                                    <MudText Typo="Typo.body2">@comment.Text</MudText>
+                                </MudCardContent>
+                            </MudCard>
+                            <MudDivider DividerType="DividerType.Middle" Class="my-2" />
                         </div>
-                    </MudCard>
+
+                    }
                 }
-            </MudCard>
+            </MudPaper>
+
+
         }
     </MudItem>
 </MudGrid>
+
