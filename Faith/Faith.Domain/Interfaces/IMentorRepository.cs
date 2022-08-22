@@ -5,5 +5,6 @@ namespace Faith.Core.Interfaces
     public interface IMentorRepository : IRepository<Mentor>
     {
         Task<Mentor?> GetMentorAndStudentsByUserId(string userId);
+        Task<Mentor?> GetMentorByUserId(string userId);
     }
 }

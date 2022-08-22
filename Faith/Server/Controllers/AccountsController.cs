@@ -55,6 +55,54 @@ namespace Faith.Server.Controllers
             return userDtoList;
         }
 
+        [Authorize]
+        [HttpGet("profile")]
+        public async Task<ActionResult<MemberProfile>> GetMemberProfile()
+        {
+            if (User.IsInRole(Roles.Mentor))
+            {
+                var mentor = await _mentorService.GetMentorByUserId(User!.Identity!.Name!);
+                if (mentor == null)
+                    return UnprocessableEntity();
+
+                return mentor;
+            }
+            else if (User.IsInRole(Roles.Student))
+            {
+                var student = await _studentService.GetStudentByUserId(User!.Identity!.Name!);
+                if (student == null)
+                    return UnprocessableEntity();
+
+                return student;
+            }
+
+            return UnprocessableEntity();
+        }
+
+        [Authorize]
+        [HttpPost("profile")]
+        public async Task<IActionResult> UpdateMemberProfile([FromBody] MemberProfile request)
+        {
+            bool isUpdated = false;
+            if (User.IsInRole(Roles.Mentor))
+            {
+                isUpdated = await _mentorService
+                    .UpdateMemberProfile(User!.Identity!.Name!, request);
+                if (!isUpdated)
+                    return UnprocessableEntity();
+            }
+            else if (User.IsInRole(Roles.Student))
+            {
+                isUpdated = await _studentService
+                    .UpdateMemberProfile(User!.Identity!.Name!, request);
+                if (!isUpdated)
+                    return UnprocessableEntity();
+            }
+
+            return Ok();
+        }
+
+
         [HttpPost("Login")]
         public async Task<IActionResult> Login([FromBody] UserLoginRequest request)
         {
@@ -84,7 +132,7 @@ namespace Faith.Server.Controllers
                 });
             }
 
-            var isMemberCreated = await CreateMember(user.Id, Roles.Student, new());
+            var isMemberCreated = await CreateMember(user.Email, Roles.Student, new());
             if (!isMemberCreated)
             {
                 await _userManager.DeleteAsync(user);
@@ -135,6 +183,26 @@ namespace Faith.Server.Controllers
             }
 
             return StatusCode(201);
+        }
+
+        [Authorize]
+        [HttpPost("change-password")]
+        [ValidateModel]
+        public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordRequest request)
+        {
+            var user = await _userManager.FindByEmailAsync(User!.Identity!.Name);
+
+            var isCurrentPasswordValid = await _userManager
+                .CheckPasswordAsync(user, request.CurrentPassword);
+            if (!isCurrentPasswordValid)
+                return UnprocessableEntity(new[] { "The current password is invalid!" });
+
+            var changePasswordResult = await _userManager
+                .ChangePasswordAsync(user, request.CurrentPassword, request.NewPassword);
+            if (!changePasswordResult.Succeeded)
+                return UnprocessableEntity(changePasswordResult.Errors.Select(e => e.Description));
+
+            return Ok();
         }
 
         private async Task<(IdentityUser, IEnumerable<string>)> CreateUserWithRole(

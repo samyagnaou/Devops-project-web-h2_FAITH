@@ -11,10 +11,13 @@ namespace Faith.Server.Controllers
     public class MessagesController : ApiControllerBase
     {
         private readonly IMessageService _messageService;
+        private readonly IWebHostEnvironment _env;
 
         public MessagesController(
+            IWebHostEnvironment env,
             IMessageService messageService)
         {
+            _env = env;
             _messageService = messageService;
         }
 
@@ -59,10 +62,29 @@ namespace Faith.Server.Controllers
 
         [HttpPost]
         [Authorize(Roles = Roles.Student)]
-        public async Task<IActionResult> PostAMessage(PostMessageRequest request)
+        public async Task<IActionResult> PostAMessage([FromForm] PostMessageRequest request)
         {
+            string fileName = string.Empty;
+
+            if (request.ImageFile != null)
+            {
+                var imagesFilePath = Path.Combine(_env.ContentRootPath, "wwwroot", "postImages");
+
+                if (!Directory.Exists(imagesFilePath))
+                    Directory.CreateDirectory(imagesFilePath);
+                try
+                {
+                    var fileExtension = Path.GetExtension(request.ImageFile.FileName);
+                    fileName = $"{Guid.NewGuid().ToString()}{fileExtension}";
+                    var filePath = Path.Combine(imagesFilePath, fileName);
+                    await using FileStream fs = new(filePath, FileMode.Create);
+                    await request.ImageFile.CopyToAsync(fs);
+                }
+                catch (Exception) { return UnprocessableEntity(); }
+            }
+
             var isMessageSent = await _messageService
-                .PostAMessage(User.Identity!.Name!, request.Text, request.ImageUrl);
+                .PostAMessage(User.Identity!.Name!, request.Text, fileName);
             if (!isMessageSent)
                 return UnprocessableEntity();
             return Ok();

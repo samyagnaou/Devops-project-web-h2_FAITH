@@ -22,9 +22,15 @@
                                     Role="@Role" />
                         <MudDivider Class="mb-2" />
                         <div class="d-flex align-center">
+                            <MudListItem Text="Account"
+                                         Icon="@Icons.Material.Outlined.Person"
+                                         Href="/account"
+                                         Class="" />
+                        </div>
+                        <div class="d-flex align-center">
                             <MudIconButton OnClick="Logout"
-                                           Icon="@Icons.Material.Outlined.Logout" />
-                            <span class="ml-2">Log Out</span>
+                                           Icon="@Icons.Material.Outlined.Logout" style="width: 62px" />
+                            <span style="margin-left: 10px">Log Out</span>
                         </div>
                     </ChildContent>
                 </MudMenu>

@@ -41,5 +41,24 @@ namespace Faith.Core.Services
             catch (Exception) { }
             return (false, null);
         }
+
+        public async Task<Student?> GetStudentByUserId(string userId)
+            => await _studentRepository.GetByUserId(userId);
+
+        public async Task<bool> UpdateMemberProfile(string userId, MemberProfile profile)
+        {
+            var student = await _studentRepository.GetByUserId(userId);
+            if (student == null)
+                return false;
+            student.FirstName = profile.FirstName;
+            student.LastName = profile.LastName;
+            student.BirthDate = profile.BirthDate;
+            try
+            {
+                await _studentRepository.UpdateAsync(student);
+                return true;
+            }
+            catch (Exception) { return false; }
+        }
     }
 }

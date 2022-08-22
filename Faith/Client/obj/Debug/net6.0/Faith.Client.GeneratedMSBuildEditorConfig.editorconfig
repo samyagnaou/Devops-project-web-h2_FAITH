@@ -62,6 +62,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGltZWxpbmVcVGltZWxpbmUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Users/samyratchet/Documents/GitRepos/Devops-project-web-h2_FAITH/Faith/Client/Pages/Users/Account.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlcnNcQWNjb3VudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Users/samyratchet/Documents/GitRepos/Devops-project-web-h2_FAITH/Faith/Client/Pages/Users/CreateUser.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlcnNcQ3JlYXRlVXNlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 

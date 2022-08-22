@@ -9,5 +9,7 @@ namespace Faith.Core.Interfaces
         Task<bool> AddStudentToGroup(string mentorUserId, Student student);
         Task<bool> AddStudentToGroup(string mentorUserId, string studentUserId);
         Task<bool> RemoveStudentFromGroup(string mentorUserId, string studentUserId);
+        Task<Mentor?> GetMentorByUserId(string userId);
+        Task<bool> UpdateMemberProfile(string userId, MemberProfile profile);
     }
 }

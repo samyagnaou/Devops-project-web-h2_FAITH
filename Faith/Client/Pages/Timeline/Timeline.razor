@@ -10,13 +10,20 @@
                       Label="Write a message... "
                       Variant="Variant.Text"
                       Margin="Margin.Dense" />
+        <InputFile id="imageFile" OnChange="SaveImage" hidden />
+        <MudIconButton HtmlTag="label"
+                       Color="Color.Info"
+                       Size="Size.Small"
+                       Icon="@Icons.Filled.PhotoCamera"
+                       for="imageFile"
+                       Class="align-self-end" />
         <MudButton Variant="Variant.Filled"
                    EndIcon="@Icons.Material.Filled.Send"
                    Color="Color.Primary"
                    Size="Size.Small"
                    Class="align-self-end"
                    Style="height: 37px"
-                   OnClick="PostMessage">
+                   OnClick="PostAMessage">
             Send
         </MudButton>
     </MudStack>
@@ -128,9 +135,9 @@
                     }
                 }
             </MudPaper>
-
-
         }
     </MudItem>
 </MudGrid>
+
+
 

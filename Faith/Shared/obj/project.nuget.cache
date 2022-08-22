@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "GMxQOoMMPuGDksOCoaYvypOQOKB3ahEzYiqiFVbcYdlFhaZMJtz6vGTynJGD6wdN7HrGnkiN8RDobWNFKW7gNg==",
+  "dgSpecHash": "ci8ZkoBmtlvHZlRoLOWQIxoB9UtvnIRgtngqOYMHuWqsL+Ba+OJIEIO6O8M18TT6qM9qQAag8UhIf4TS2aNTXQ==",
   "success": true,
   "projectFilePath": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Shared\\Faith.Shared.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\samyratchet\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
+    "C:\\Users\\samyratchet\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
+    "C:\\Users\\samyratchet\\.nuget\\packages\\system.io.pipelines\\5.0.2\\system.io.pipelines.5.0.2.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -22,8 +22,10 @@
 
         </CardHeaderActions>
     </MudCardHeader>
-    @*<MudCardMedia Image="images/pilars.jpg" Height="250" />*@
-
+    @if (!string.IsNullOrWhiteSpace(Message.ImageUrl))
+    {
+        <MudCardMedia Image=@GetImageUrl() Height="250" />
+    }
     <MudCardContent>
         <MudText Typo="Typo.body2">@Message.Text</MudText>
     </MudCardContent>
@@ -55,4 +57,13 @@
 
     [Parameter]
     public Func<int, Task> ArchiveAMessage { get; set; } = null!;
+
+    [Inject]
+    private NavigationManager _navManager { get; set; } = null!;
+
+    private string GetImageUrl()
+    {
+        var url = $"{_navManager.BaseUri}wwwroot/postImages/{Message.ImageUrl}";
+        return url;
+    }
 }

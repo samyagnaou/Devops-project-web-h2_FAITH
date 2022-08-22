@@ -12,5 +12,8 @@ namespace Faith.Infrastructure.Data.Repositories
             => await _dbSet
                 .Include(m => m.Students)
                 .FirstOrDefaultAsync(s => s.MemberId.Equals(userId));
+
+        public async Task<Mentor?> GetMentorByUserId(string userId)
+            => await _dbSet.FirstOrDefaultAsync(m => m.MemberId == userId);
     }
 }

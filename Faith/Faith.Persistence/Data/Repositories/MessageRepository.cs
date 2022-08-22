@@ -25,7 +25,7 @@ namespace Faith.Infrastructure.Data.Repositories
                 .ThenInclude(c => c.Mentor)
                 .FirstOrDefaultAsync(s => s.MemberId == studentUserId);
 
-            return student!.Messages;
+            return student!.Messages.OrderByDescending(m => m.CreatedAt);
         }
 
 
@@ -41,7 +41,11 @@ namespace Faith.Infrastructure.Data.Repositories
 
             var archivedMessages = mentor!.ArchivedMessages;
 
-            return (mentor!.Students.SelectMany(s => s.Messages).Except(archivedMessages), archivedMessages);
+            return (mentor!.Students
+                    .SelectMany(s => s.Messages)
+                    .Except(archivedMessages)
+                    .OrderByDescending(m => m.CreatedAt),
+                archivedMessages.OrderByDescending(m => m.CreatedAt));
         }
     }
 }

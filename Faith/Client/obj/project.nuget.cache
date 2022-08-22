@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "TmrHDeQzqCbEEClx5bdHHJRsd82/Wn7XL6tlPWHfoLGT+3WHzwweRPUjwUh7ofrqXcsBzOMXpyz+EQLWz6j6xg==",
+  "dgSpecHash": "BZGI5qgF/W5gQ+IucJDO539dDl1uvw4726A9NxSzOhb2MEAupbVNiPOx0VpJkQjQek73aCuGjtgpJ3fl6rC6xw==",
   "success": true,
   "projectFilePath": "D:\\Users\\samyratchet\\Documents\\GitRepos\\Devops-project-web-h2_FAITH\\Faith\\Client\\Faith.Client.csproj",
   "expectedPackageFiles": [
@@ -14,6 +14,7 @@
     "C:\\Users\\samyratchet\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly\\6.0.4\\microsoft.aspnetcore.components.webassembly.6.0.4.nupkg.sha512",
     "C:\\Users\\samyratchet\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.authentication\\6.0.7\\microsoft.aspnetcore.components.webassembly.authentication.6.0.7.nupkg.sha512",
     "C:\\Users\\samyratchet\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.devserver\\6.0.4\\microsoft.aspnetcore.components.webassembly.devserver.6.0.4.nupkg.sha512",
+    "C:\\Users\\samyratchet\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
     "C:\\Users\\samyratchet\\.nuget\\packages\\microsoft.aspnetcore.metadata\\6.0.7\\microsoft.aspnetcore.metadata.6.0.7.nupkg.sha512",
     "C:\\Users\\samyratchet\\.nuget\\packages\\microsoft.extensions.configuration\\6.0.0\\microsoft.extensions.configuration.6.0.0.nupkg.sha512",
     "C:\\Users\\samyratchet\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",

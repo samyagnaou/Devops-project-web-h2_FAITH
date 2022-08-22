@@ -10,13 +10,21 @@ using System.Net.Http.Json;
 using System.Security.Claims;
 using Faith.Shared.Models.Responses;
 using MudBlazor;
+using System.Net.Http.Headers;
+using System.Net.Http.Json;
+using System.Security.Claims;
+using System.Text;
+using System.Text.Unicode;
+using Microsoft.AspNetCore.Components.Forms;
 
 namespace Faith.Client.Pages.Timeline
 {
     public class TimelineBase : ComponentBase
     {
+
         protected PostMessageRequest PostMessageRequest { get; set; } = new();
         protected AddCommentRequest AddCommentRequest { get; set; } = new();
+        private IBrowserFile? _imageFile { get; set; } = null!;
 
         protected Message? SelectedMessage { get; set; }
         protected IEnumerable<Message>? Messages { get; set; } = Enumerable.Empty<Message>();
@@ -85,15 +93,28 @@ namespace Faith.Client.Pages.Timeline
                 .GetFromJsonAsync<IEnumerable<Message>>("/messages");
         }
 
-        protected async Task PostMessage()
+        protected async Task PostAMessage()
         {
-            using var response = await _httpClient
-                .PostAsJsonAsync("/messages", PostMessageRequest);
+            using var content = new MultipartFormDataContent();
+            if (_imageFile != null)
+            {
+                var maxAllowedSize = 1 * 1024 * 1024 * 1024;
+                var fileContent = new StreamContent(_imageFile.OpenReadStream(maxAllowedSize));
+                fileContent.Headers.ContentType = new MediaTypeHeaderValue(_imageFile.ContentType);
+                content.Add(fileContent, "imageFile", _imageFile.Name);
+            }
+
+            var textBytes = Encoding.UTF8.GetBytes(PostMessageRequest.Text);
+            var textContent = new StreamContent(new MemoryStream(textBytes));
+            content.Add(textContent, "text");
+
+            using var response = await _httpClient.PostAsync("/messages", content);
             var result = await response.Content.ReadAsStringAsync();
             if (response.IsSuccessStatusCode)
             {
                 await LoadMessagesForAStudent();
                 PostMessageRequest = new();
+                _imageFile = null;
             }
         }
 
@@ -181,6 +202,11 @@ namespace Faith.Client.Pages.Timeline
         {
             ShowArchivedMessages = !ShowArchivedMessages;
             SelectedMessage = null;
+        }
+
+        protected void SaveImage(InputFileChangeEventArgs e)
+        {
+            _imageFile = e.File;
         }
     }
 }
